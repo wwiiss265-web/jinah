@@ -1,52 +1,46 @@
-@import url('https://fonts.googleapis.com/css2?family=Fontdiner+Swanky&family=Isometra&family=Lavishly+Yours&display=swap');
-<style>
+/**
+* Template Name: Lonely
+* Template URL: https://bootstrapmade.com/free-html-bootstrap-template-lonely/
+* Updated: Aug 07 2024 with Bootstrap v5.3.3
+* Author: BootstrapMade.com
+* License: https://bootstrapmade.com/license/
+*/
 
-
-.lavishly-yours-regular {
-  font-family: "Lavishly Yours", cursive;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.nanum-pen-script-regular {
-  font-family: "Nanum Pen Script", cursive;
-  font-weight: 400;
-  font-style: normal;
-}
-
-
-
+/*--------------------------------------------------------------
+# Font & Color Variables
+# Help: https://bootstrapmade.com/color-system/
+--------------------------------------------------------------*/
 /* Fonts */
 :root {
-  --default-font: "Inconsolata",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --heading-font: "Inconsolata",  sans-serif;
-  --nav-font: "Inconsolata",  sans-serif;
+  --default-font: "Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --heading-font: "Playfair Display",  sans-serif;
+  --nav-font: "Poppins",  sans-serif;
 }
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
 :root { 
   --background-color: #ffffff; /* Background color for the entire website, including individual sections */
-  --default-color: #212529; /* Default color used for the majority of the text content across the entire website */
-  --heading-color: #000000; /* Color for headings, subheadings and title throughout the website */
-  --accent-color: #000000; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+  --default-color: #5a656e; /* Default color used for the majority of the text content across the entire website */
+  --heading-color: #2c4964; /* Color for headings, subheadings and title throughout the website */
+  --accent-color: #d43076; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
   --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
   --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
 }
 
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
 :root {
-  --nav-color: #5b5b5b;  /* The default color of the main navmenu links */
-  --nav-hover-color: #000000; /* Applied to main navmenu links when they are hovered over or active */
-  --nav-mobile-background-color: #f5f5f5; /* Used as the background color for mobile navigation menu */
+  --nav-color: #5a656e;  /* The default color of the main navmenu links */
+  --nav-hover-color: #d43076; /* Applied to main navmenu links when they are hovered over or active */
+  --nav-mobile-background-color: #ffffff; /* Used as the background color for mobile navigation menu */
   --nav-dropdown-background-color: #ffffff; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
-  --nav-dropdown-color: #5b5b5b; /* Used for navigation links of the dropdown items in the navigation menu. */
-  --nav-dropdown-hover-color: #000000; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
+  --nav-dropdown-color: #5a656e; /* Used for navigation links of the dropdown items in the navigation menu. */
+  --nav-dropdown-hover-color: #d43076; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
 }
 
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
 
 .light-background {
-  --background-color: #f9f9f9;
+  --background-color: #f2f6f9;
   --surface-color: #ffffff;
 }
 
@@ -172,131 +166,245 @@ h6 {
   color: var(--heading-color);
 }
 
+.scrolled .header {
+  box-shadow: 0px 0 18px rgba(0, 0, 0, 0.1);
+}
+
 /*--------------------------------------------------------------
 # Navigation Menu
 --------------------------------------------------------------*/
-/* Navmenu */
-.mobile-nav-toggle {
-  color: var(--nav-color);
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  font-size: 32px;
-  line-height: 0;
-  cursor: pointer;
-  display: block !important;
-  z-index: 998;
-  transition: 0.3s;
+/* Navmenu - Desktop */
+@media (min-width: 1200px) {
+  .navmenu {
+    padding: 0;
+  }
+
+  .navmenu ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style: none;
+    align-items: center;
+  }
+
+  .navmenu li {
+    position: relative;
+  }
+
+  .navmenu a,
+  .navmenu a:focus {
+    color: var(--nav-color);
+    padding: 18px 15px;
+    font-size: 16px;
+    font-family: var(--nav-font);
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    white-space: nowrap;
+    transition: 0.3s;
+  }
+
+  .navmenu a i,
+  .navmenu a:focus i {
+    font-size: 12px;
+    line-height: 0;
+    margin-left: 5px;
+    transition: 0.3s;
+  }
+
+  .navmenu li:last-child a {
+    padding-right: 0;
+  }
+
+  .navmenu li:hover>a,
+  .navmenu .active,
+  .navmenu .active:focus {
+    color: var(--nav-hover-color);
+  }
+
+  .navmenu .dropdown ul {
+    margin: 0;
+    padding: 10px 0;
+    background: var(--nav-dropdown-background-color);
+    display: block;
+    position: absolute;
+    visibility: hidden;
+    left: 14px;
+    top: 130%;
+    opacity: 0;
+    transition: 0.3s;
+    border-radius: 4px;
+    z-index: 99;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
+  }
+
+  .navmenu .dropdown ul li {
+    min-width: 200px;
+  }
+
+  .navmenu .dropdown ul a {
+    padding: 10px 20px;
+    font-size: 15px;
+    text-transform: none;
+    color: var(--nav-dropdown-color);
+  }
+
+  .navmenu .dropdown ul a i {
+    font-size: 12px;
+  }
+
+  .navmenu .dropdown ul a:hover,
+  .navmenu .dropdown ul .active:hover,
+  .navmenu .dropdown ul li:hover>a {
+    color: var(--nav-dropdown-hover-color);
+  }
+
+  .navmenu .dropdown:hover>ul {
+    opacity: 1;
+    top: 100%;
+    visibility: visible;
+  }
+
+  .navmenu .dropdown .dropdown ul {
+    top: 0;
+    left: -90%;
+    visibility: hidden;
+  }
+
+  .navmenu .dropdown .dropdown:hover>ul {
+    opacity: 1;
+    top: 0;
+    left: -100%;
+    visibility: visible;
+  }
 }
 
-.mobile-nav-toggle:hover {
-  color: var(--nav-hover-color);
-}
+/* Navmenu - Mobile */
+@media (max-width: 1199px) {
+  .mobile-nav-toggle {
+    color: var(--nav-color);
+    font-size: 28px;
+    line-height: 0;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
 
-.navmenu {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  right: -300px;
-  z-index: 997;
-  transition: 0.3s;
-  width: 300px;
-  overflow: hidden;
-}
+  .navmenu {
+    padding: 0;
+    z-index: 9997;
+  }
 
-.navmenu ul {
-  display: block;
-  list-style: none;
-  padding: 10px 0;
-  margin: 0;
-  overflow-y: auto;
-  transition: 0.3s;
-  z-index: 998;
-}
+  .navmenu ul {
+    display: none;
+    list-style: none;
+    position: absolute;
+    inset: 60px 20px 20px 20px;
+    padding: 10px 0;
+    margin: 0;
+    border-radius: 6px;
+    background-color: var(--nav-mobile-background-color);
+    overflow-y: auto;
+    transition: 0.3s;
+    z-index: 9998;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
+  }
 
-.navmenu a,
-.navmenu a:focus {
-  color: var(--nav-dropdown-color);
-  padding: 10px 20px;
-  font-family: var(--nav-font);
-  font-size: 17px;
-  font-weight: 500;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  white-space: nowrap;
-  transition: 0.3s;
-}
+  .navmenu a,
+  .navmenu a:focus {
+    color: var(--nav-dropdown-color);
+    padding: 10px 20px;
+    font-family: var(--nav-font);
+    font-size: 17px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    white-space: nowrap;
+    transition: 0.3s;
+  }
 
-.navmenu a i,
-.navmenu a:focus i {
-  font-size: 12px;
-  line-height: 0;
-  margin-left: 5px;
-  width: 30px;
-  height: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  transition: 0.3s;
-  background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
-}
+  .navmenu a i,
+  .navmenu a:focus i {
+    font-size: 12px;
+    line-height: 0;
+    margin-left: 5px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: 0.3s;
+    background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
+  }
 
-.navmenu a i:hover,
-.navmenu a:focus i:hover {
-  background-color: var(--accent-color);
-  color: var(--contrast-color);
-}
+  .navmenu a i:hover,
+  .navmenu a:focus i:hover {
+    background-color: var(--accent-color);
+    color: var(--contrast-color);
+  }
 
-.navmenu a:hover,
-.navmenu .active,
-.navmenu .active:focus {
-  color: var(--nav-dropdown-hover-color);
-}
+  .navmenu a:hover,
+  .navmenu .active,
+  .navmenu .active:focus {
+    color: var(--nav-dropdown-hover-color);
+  }
 
-.navmenu .active i,
-.navmenu .active:focus i {
-  background-color: var(--accent-color);
-  color: var(--contrast-color);
-  transform: rotate(180deg);
-}
+  .navmenu .active i,
+  .navmenu .active:focus i {
+    background-color: var(--accent-color);
+    color: var(--contrast-color);
+    transform: rotate(180deg);
+  }
 
-.navmenu .dropdown ul {
-  position: static;
-  display: none;
-  z-index: 99;
-  padding: 10px 0;
-  margin: 10px 20px;
-  box-shadow: none;
-  transition: all 0.5s ease-in-out;
-}
+  .navmenu .dropdown ul {
+    position: static;
+    display: none;
+    z-index: 99;
+    padding: 10px 0;
+    margin: 10px 20px;
+    background-color: var(--nav-dropdown-background-color);
+    border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+    box-shadow: none;
+    transition: all 0.5s ease-in-out;
+  }
 
-.navmenu .dropdown>.dropdown-active {
-  display: block;
-  background-color: var(--nav-dropdown-background-color);
-  border: 1px solid color-mix(in srgb, var(--nav-dropdown-color), transparent 90%);
-}
+  .navmenu .dropdown ul ul {
+    background-color: rgba(33, 37, 41, 0.1);
+  }
 
-.mobile-nav-active {
-  overflow: hidden;
-}
+  .navmenu .dropdown>.dropdown-active {
+    display: block;
+    background-color: rgba(33, 37, 41, 0.03);
+  }
 
-.mobile-nav-active .mobile-nav-toggle {
-  right: 310px;
-  background-color: var(--surface-color);
-  border-radius: 50%;
-  border: 1px solid color-mix(in srgb, var(--default-color), transparent 80%);
-}
+  .mobile-nav-active {
+    overflow: hidden;
+  }
 
-.mobile-nav-active .navmenu {
-  position: fixed;
-  overflow: hidden;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  background-color: var(--nav-mobile-background-color);
-  transition: 0.3s;
+  .mobile-nav-active .mobile-nav-toggle {
+    color: #fff;
+    position: absolute;
+    font-size: 32px;
+    top: 15px;
+    right: 15px;
+    margin-right: 0;
+    z-index: 9999;
+  }
+
+  .mobile-nav-active .navmenu {
+    position: fixed;
+    overflow: hidden;
+    inset: 0;
+    background: rgba(33, 37, 41, 0.8);
+    transition: 0.3s;
+  }
+
+  .mobile-nav-active .navmenu>ul {
+    display: block;
+  }
 }
 
 /*--------------------------------------------------------------
@@ -306,41 +414,59 @@ h6 {
   color: var(--default-color);
   background-color: var(--background-color);
   font-size: 14px;
-  padding: 40px 0;
+  text-align: center;
+  padding: 30px 0;
   position: relative;
 }
 
-.footer .copyright p {
-  margin-bottom: 0;
+.footer h3 {
+  font-size: 36px;
+  font-weight: 700;
+  position: relative;
+  padding: 0;
+  margin: 0 0 15px 0;
+}
+
+.footer p {
+  font-size: 15;
+  font-style: italic;
+  padding: 0;
+  margin: 0 0 30px 0;
 }
 
 .footer .social-links {
-  margin-top: 20px;
+  margin: 0 0 30px 0;
 }
 
 .footer .social-links a {
+  font-size: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  background: var(--accent-color);
+  color: var(--contrast-color);
+  line-height: 1;
+  margin: 0 4px;
   border-radius: 50%;
-  border: 1px solid color-mix(in srgb, var(--default-color), transparent 50%);
-  font-size: 16px;
-  color: color-mix(in srgb, var(--default-color), transparent 50%);
-  margin: 0 5px;
+  text-align: center;
+  width: 36px;
+  height: 36px;
   transition: 0.3s;
 }
 
 .footer .social-links a:hover {
-  color: var(--accent-color);
-  border-color: var(--accent-color);
+  background: color-mix(in srgb, var(--accent-color), transparent 20%);
+  text-decoration: none;
+}
+
+.footer .copyright {
+  padding-top: 25px;
+  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
 }
 
 .footer .credits {
-  margin-top: 10px;
   font-size: 13px;
-  text-align: center;
+  padding-top: 5px;
 }
 
 /*--------------------------------------------------------------
@@ -349,9 +475,9 @@ h6 {
 #preloader {
   position: fixed;
   inset: 0;
-  z-index: 9999;
+  z-index: 999999;
   overflow: hidden;
-  background-color: var(--background-color);
+  background: var(--background-color);
   transition: all 0.6s ease-out;
 }
 
@@ -360,12 +486,12 @@ h6 {
   position: fixed;
   top: calc(50% - 30px);
   left: calc(50% - 30px);
-  border: 6px solid var(--accent-color);
-  border-top-color: color-mix(in srgb, var(--accent-color), transparent 90%);
+  border: 6px solid #ffffff;
+  border-color: var(--accent-color) transparent var(--accent-color) transparent;
   border-radius: 50%;
   width: 60px;
   height: 60px;
-  animation: animate-preloader 1s linear infinite;
+  animation: animate-preloader 1.5s linear infinite;
 }
 
 @keyframes animate-preloader {
@@ -386,12 +512,12 @@ h6 {
   visibility: hidden;
   opacity: 0;
   right: 15px;
-  bottom: -15px;
+  bottom: 15px;
   z-index: 99999;
   background-color: var(--accent-color);
-  width: 44px;
-  height: 44px;
-  border-radius: 50px;
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
   transition: all 0.4s;
 }
 
@@ -409,7 +535,6 @@ h6 {
 .scroll-top.active {
   visibility: visible;
   opacity: 1;
-  bottom: 15px;
 }
 
 /*--------------------------------------------------------------
@@ -427,25 +552,22 @@ h6 {
 .page-title {
   color: var(--default-color);
   background-color: var(--background-color);
-  padding: 120px 0;
-  text-align: center;
+  padding: 25px 0;
   position: relative;
 }
 
 .page-title h1 {
-  font-size: 42px;
+  font-size: 24px;
   font-weight: 700;
-  margin-bottom: 10px;
 }
 
 .page-title .breadcrumbs ol {
   display: flex;
   flex-wrap: wrap;
   list-style: none;
-  justify-content: center;
   padding: 0;
   margin: 0;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 400;
 }
 
@@ -491,8 +613,23 @@ section,
 
 .section-title h2 {
   font-size: 32px;
-  font-weight: 400;
-  margin-bottom: 15px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  position: relative;
+}
+
+.section-title h2:after {
+  margin-inline: auto;
+  content: "";
+  position: absolute;
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: var(--accent-color);
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 
 .section-title p {
@@ -500,328 +637,88 @@ section,
 }
 
 /*--------------------------------------------------------------
-# Portfolio Section
+# Hero Section
 --------------------------------------------------------------*/
-.portfolio .portfolio-info h3 {
-  font-size: 24px;
-  margin-bottom: 5px;
-}
-
-.portfolio .portfolio-info p {
-  font-size: 15px;
-}
-
-.portfolio .portfolio-filters {
-  padding: 0;
-  margin: 0 auto 20px auto;
-  list-style: none;
-}
-
-.portfolio .portfolio-filters li {
-  cursor: pointer;
-  display: inline-block;
-  padding: 0;
-  font-size: 16px;
-  font-weight: 400;
-  margin: 0 10px;
-  line-height: 1;
-  margin-bottom: 5px;
-  transition: all 0.3s ease-in-out;
-}
-
-.portfolio .portfolio-filters li:hover,
-.portfolio .portfolio-filters li.filter-active {
-  border-bottom: 2px solid var(--default-color);
-  padding-bottom: 3px;
-}
-
-.portfolio .portfolio-filters li:first-child {
-  margin-left: 0;
-}
-
-.portfolio .portfolio-filters li:last-child {
-  margin-right: 5px;
-}
-
-@media (max-width: 575px) {
-  .portfolio .portfolio-filters li {
-    font-size: 14px;
-    margin: 0 5px;
-  }
-}
-
-.portfolio .portfolio-content {
+.hero {
+  background: url(../img/hero-bg.jpg) top center no-repeat;
+  background-size: cover;
+  width: 100%;
+  min-height: 90vh;
   position: relative;
-  overflow: hidden;
-}
-
-.portfolio .portfolio-content img {
-  transition: 0.3s;
-}
-
-.portfolio .portfolio-content .portfolio-info {
-  opacity: 0;
-  position: absolute;
-  inset: 0;
-  z-index: 3;
-  transition: all ease-in-out 0.3s;
-  background: rgba(0, 0, 0, 0.6);
-  padding: 15px;
+  padding: 120px 0 60px 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
 }
 
-.portfolio .portfolio-content .portfolio-info h4 {
-  font-size: 18px;
-  mask-border: 0;
-  font-weight: 400;
-  color: #ffffff;
-  display: inline-block;
-}
-
-.portfolio .portfolio-content .portfolio-info p {
-  text-align: center;
-  display: inline-block;
-  font-size: 14px;
-  font-weight: 400;
-  color: rgba(255, 255, 255, 0.8);
-}
-
-.portfolio .portfolio-content .portfolio-info .preview-link,
-.portfolio .portfolio-content .portfolio-info .details-link {
-  font-size: 26px;
-  color: #fff;
-  transition: 0.3s;
-  line-height: 1.2;
-}
-
-.portfolio .portfolio-content .portfolio-info .preview-link:hover,
-.portfolio .portfolio-content .portfolio-info .details-link:hover {
-  color: var(--accent-color);
-}
-
-.portfolio .portfolio-content .portfolio-info .details-link {
-  left: 50%;
-  font-size: 34px;
-  line-height: 0;
-}
-
-.portfolio .portfolio-content:hover .portfolio-info {
-  opacity: 1;
-}
-
-.portfolio .portfolio-content:hover img {
-  transform: scale(1.1);
-}
-
-/*--------------------------------------------------------------
-# Clients Section
---------------------------------------------------------------*/
-.clients .swiper-slide img {
-  opacity: 0.5;
-  transition: 0.3s;
-  filter: grayscale(100);
-}
-
-.clients .swiper-slide img:hover {
-  filter: none;
-  opacity: 1;
-}
-
-.clients .swiper-wrapper {
-  height: auto;
-}
-
-.clients .swiper-pagination {
-  margin-top: 20px;
-  position: relative;
-}
-
-.clients .swiper-pagination .swiper-pagination-bullet {
-  width: 12px;
-  height: 12px;
-  opacity: 1;
-  background-color: color-mix(in srgb, var(--default-color), transparent 80%);
-}
-
-.clients .swiper-pagination .swiper-pagination-bullet-active {
-  background-color: var(--accent-color);
-}
-
-/*--------------------------------------------------------------
-# Services Section
---------------------------------------------------------------*/
-.services .service-item {
-  background-color: var(--surface-color);
-  padding: 40px;
-  box-shadow: 0px 0 30px rgba(0, 0, 0, 0.1);
-  height: 100%;
-}
-
-.services .service-item .icon {
-  width: 48px;
-  height: 48px;
-  position: relative;
-  margin-bottom: 50px;
-}
-
-.services .service-item .icon i {
-  color: color-mix(in srgb, var(--heading-color), transparent 30%);
-  font-size: 56px;
-  transition: ease-in-out 0.3s;
-  z-index: 2;
-  position: relative;
-}
-
-.services .service-item .icon:before {
-  position: absolute;
+.hero:before {
   content: "";
-  height: 100%;
+  background: color-mix(in srgb, var(--background-color), transparent 90%);
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+}
+
+.hero img {
+  position: absolute;
+  inset: 0;
+  display: block;
   width: 100%;
-  background: color-mix(in srgb, var(--heading-color), transparent 95%);
-  border-radius: 50px;
+  height: 100%;
+  object-fit: cover;
   z-index: 1;
-  top: 10px;
-  right: -20px;
-  transition: 0.3s;
 }
 
-.services .service-item h3 {
-  color: color-mix(in srgb, var(--heading-color), transparent 20%);
-  font-weight: 700;
-  margin: 0 0 20px 0;
-  padding-bottom: 8px;
-  font-size: 22px;
+.hero .container {
   position: relative;
-  display: inline-block;
-  border-bottom: 4px solid color-mix(in srgb, var(--heading-color), transparent 90%);
-  transition: 0.3s;
+  z-index: 3;
 }
 
-.services .service-item p {
-  line-height: 24px;
-  font-size: 14px;
-  margin-bottom: 0;
+.hero h2 {
+  margin: 0;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 56px;
 }
 
-.services .service-item .readmore {
-  margin-top: 15px;
-  display: inline-block;
-  color: color-mix(in srgb, var(--default-color), transparent 30%);
+.hero p {
+  color: color-mix(in srgb, var(--default-color), transparent 20%);
+  margin: 10px 0 0 0;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 1px;
 }
 
-.services .service-item:hover .icon i {
-  color: var(--heading-color);
+@media (max-width: 640px) {
+  .hero h1 {
+    font-size: 30px;
+    line-height: 36px;
+  }
 }
 
-.services .service-item:hover .icon:before {
-  background: color-mix(in srgb, var(--heading-color), transparent 90%);
+.hero .btn-scroll {
+  transition: 0.4s;
+  color: color-mix(in srgb, var(--default-color), transparent 60%);
+  display: block;
+  margin-top: 30px;
+  animation: btn-up-down 1s ease-in-out infinite alternate-reverse both;
 }
 
-.services .service-item:hover h3 {
-  border-color: color-mix(in srgb, var(--accent-color), transparent 70%);
-  color: var(--heading-color);
+.hero .btn-scroll i {
+  font-size: 48px;
 }
 
-.services .service-item:hover .readmore {
+.hero .btn-scroll:hover {
   color: var(--accent-color);
 }
 
-/*--------------------------------------------------------------
-# Testimonials Section
---------------------------------------------------------------*/
-.testimonials .section-header {
-  margin-bottom: 40px;
-}
+@keyframes btn-up-down {
+  0% {
+    transform: translateY(5px);
+  }
 
-.testimonials .testimonials-carousel,
-.testimonials .testimonials-slider {
-  overflow: hidden;
-}
-
-.testimonials .testimonial-item {
-  text-align: center;
-}
-
-.testimonials .testimonial-item .testimonial-img {
-  width: 120px;
-  border-radius: 50%;
-  border: 4px solid var(--background-color);
-  margin: 0 auto;
-}
-
-.testimonials .testimonial-item h3 {
-  font-size: 20px;
-  font-weight: bold;
-  margin: 10px 0 5px 0;
-}
-
-.testimonials .testimonial-item h4 {
-  font-size: 14px;
-  color: color-mix(in srgb, var(--default-color), transparent 40%);
-  margin: 0 0 15px 0;
-}
-
-.testimonials .testimonial-item .stars {
-  margin-bottom: 15px;
-}
-
-.testimonials .testimonial-item .stars i {
-  color: #ffc107;
-  margin: 0 1px;
-}
-
-.testimonials .testimonial-item .quote-icon-left,
-.testimonials .testimonial-item .quote-icon-right {
-  color: color-mix(in srgb, var(--accent-color), transparent 50%);
-  font-size: 26px;
-  line-height: 0;
-}
-
-.testimonials .testimonial-item .quote-icon-left {
-  display: inline-block;
-  left: -5px;
-  position: relative;
-}
-
-.testimonials .testimonial-item .quote-icon-right {
-  display: inline-block;
-  right: -5px;
-  position: relative;
-  top: 10px;
-  transform: scale(-1, -1);
-}
-
-.testimonials .testimonial-item p {
-  font-style: italic;
-  margin: 0 auto 15px auto;
-}
-
-.testimonials .swiper-wrapper {
-  height: auto;
-}
-
-.testimonials .swiper-pagination {
-  margin-top: 20px;
-  position: relative;
-}
-
-.testimonials .swiper-pagination .swiper-pagination-bullet {
-  width: 12px;
-  height: 12px;
-  opacity: 1;
-  background-color: color-mix(in srgb, var(--default-color), transparent 85%);
-}
-
-.testimonials .swiper-pagination .swiper-pagination-bullet-active {
-  background-color: var(--accent-color);
-}
-
-@media (min-width: 992px) {
-  .testimonials .testimonial-item p {
-    width: 80%;
+  100% {
+    transform: translateY(-5px);
   }
 }
 
@@ -853,6 +750,43 @@ section,
   margin-right: 5px;
   color: var(--accent-color);
   line-height: 0;
+}
+
+/*--------------------------------------------------------------
+# Skills Section
+--------------------------------------------------------------*/
+.skills .progress {
+  height: 60px;
+  display: block;
+  background: none;
+  border-radius: 0;
+}
+
+.skills .progress .skill {
+  color: var(--heading-color);
+  padding: 0;
+  margin: 0 0 6px 0;
+  text-transform: uppercase;
+  display: block;
+  font-weight: 600;
+  font-family: var(--heading-font);
+}
+
+.skills .progress .skill .val {
+  float: right;
+  font-style: normal;
+}
+
+.skills .progress-bar-wrap {
+  background: color-mix(in srgb, var(--default-color), transparent 90%);
+  height: 10px;
+}
+
+.skills .progress-bar {
+  width: 1px;
+  height: 10px;
+  transition: 0.9s;
+  background-color: var(--accent-color);
 }
 
 /*--------------------------------------------------------------
@@ -915,144 +849,333 @@ section,
 }
 
 /*--------------------------------------------------------------
-# Pricing Section
+# Services Section
 --------------------------------------------------------------*/
-.pricing .pricing-item {
+.services .service-item {
   background-color: var(--surface-color);
-  padding: 60px 40px;
-  box-shadow: 0 3px 20px -2px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0 25px 0 rgba(0, 0, 0, 0.1);
+  padding: 50px 30px;
+  transition: all 0.3s ease-in-out;
   height: 100%;
   position: relative;
+  z-index: 1;
 }
 
-.pricing h3 {
-  font-weight: 600;
+.services .service-item:before {
+  content: "";
+  position: absolute;
+  background: var(--accent-color);
+  inset: 100% 0 0 0;
+  transition: all 0.3s;
+  z-index: -1;
+}
+
+.services .service-item .icon {
+  margin-bottom: 10px;
+}
+
+.services .service-item .icon i {
+  color: var(--accent-color);
+  font-size: 36px;
+  transition: ease-in-out 0.3s;
+}
+
+.services .service-item h4 {
+  font-weight: 700;
   margin-bottom: 15px;
   font-size: 20px;
 }
 
-.pricing h4 {
-  font-size: 48px;
-  color: var(--accent-color);
-  font-family: var(--heading-font);
-  font-weight: 400;
+.services .service-item h4 a {
+  color: var(--heading-color);
+  transition: ease-in-out 0.3s;
 }
 
-.pricing h4 sup {
-  font-size: 28px;
+.services .service-item p {
+  line-height: 24px;
+  font-size: 14px;
+  margin-bottom: 0;
+  transition: ease-in-out 0.3s;
 }
 
-.pricing h4 span {
-  color: color-mix(in srgb, var(--default-color), transparent 60%);
-  font-size: 18px;
-}
-
-.pricing ul {
-  padding: 20px 0;
-  list-style: none;
-  color: color-mix(in srgb, var(--default-color), transparent 30%);
-  text-align: left;
-  line-height: 20px;
-}
-
-.pricing ul li {
-  padding: 10px 0;
-  display: flex;
-  align-items: center;
-}
-
-.pricing ul i {
-  color: #059652;
-  font-size: 24px;
-  padding-right: 3px;
-}
-
-.pricing ul .na {
-  color: color-mix(in srgb, var(--default-color), transparent 60%);
-}
-
-.pricing ul .na i {
-  color: color-mix(in srgb, var(--default-color), transparent 60%);
-}
-
-.pricing ul .na span {
-  text-decoration: line-through;
-}
-
-.pricing .buy-btn {
-  color: color-mix(in srgb, var(--default-color), transparent 40%);
-  background-color: var(--background-color);
-  display: inline-block;
-  padding: 8px 35px 10px 35px;
-  border-radius: 4px;
-  border: 1px solid color-mix(in srgb, var(--default-color), transparent 60%);
-  transition: none;
-  font-size: 16px;
-  font-weight: 500;
-  font-family: var(--heading-font);
-  transition: 0.3s;
-}
-
-.pricing .buy-btn:hover {
-  background: var(--accent-color);
-  border-color: var(--accent-color);
+.services .service-item:hover h4 a,
+.services .service-item:hover .icon i,
+.services .service-item:hover p {
   color: var(--contrast-color);
 }
 
-.pricing .featured {
-  z-index: 10;
-}
-
-.pricing .featured .pricing-item {
+.services .service-item:hover:before {
   background: var(--accent-color);
-}
-
-@media (min-width: 992px) {
-  .pricing .featured .pricing-item {
-    transform: scale(1.02, 1.1);
-  }
-}
-
-.pricing .featured h3,
-.pricing .featured h4,
-.pricing .featured h4 span,
-.pricing .featured ul,
-.pricing .featured ul .na,
-.pricing .featured ul i,
-.pricing .featured ul .na i {
-  color: var(--contrast-color);
-}
-
-.pricing .featured .buy-btn {
-  background: var(--accent-color);
-  color: var(--contrast-color);
-  border-color: var(--contrast-color);
-}
-
-.pricing .featured .buy-btn:hover {
-  background: color-mix(in srgb, var(--background-color), transparent 92%);
+  inset: 0;
+  border-radius: 0px;
 }
 
 /*--------------------------------------------------------------
-# Alt Pricing Section
+# Portfolio Section
 --------------------------------------------------------------*/
-.alt-pricing .pricing-item {
-  border-bottom: 1px dashed color-mix(in srgb, var(--default-color), transparent 60%);
-  width: 100%;
-  height: 100%;
-  padding: 0 0 15px 0;
+.portfolio .portfolio-filters {
+  padding: 0;
+  margin: 0 auto 20px auto;
+  list-style: none;
+  text-align: center;
 }
 
-.alt-pricing .pricing-item h3 {
-  margin: 0;
-  font-size: 20px;
-  font-weight: 600;
+.portfolio .portfolio-filters li {
+  background-color: var(--surface-color);
+  cursor: pointer;
+  display: inline-block;
+  padding: 8px 20px 10px 20px;
+  margin: 0 2px;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1;
+  margin-bottom: 5px;
+  border-radius: 50px;
+  transition: all 0.3s ease-in-out;
 }
 
-.alt-pricing .pricing-item h4 {
-  margin: 0;
+.portfolio .portfolio-filters li:hover,
+.portfolio .portfolio-filters li.filter-active {
+  color: var(--contrast-color);
+  background-color: var(--accent-color);
+}
+
+.portfolio .portfolio-filters li:first-child {
+  margin-left: 0;
+}
+
+.portfolio .portfolio-filters li:last-child {
+  margin-right: 0;
+}
+
+@media (max-width: 575px) {
+  .portfolio .portfolio-filters li {
+    font-size: 14px;
+    margin: 0 0 10px 0;
+  }
+}
+
+.portfolio .portfolio-item {
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio .portfolio-item .portfolio-info {
+  opacity: 0;
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: -100%;
+  z-index: 3;
+  transition: all ease-in-out 0.5s;
+  background: color-mix(in srgb, var(--surface-color), transparent 10%);
+  padding: 15px;
+}
+
+.portfolio .portfolio-item .portfolio-info h4 {
   font-size: 18px;
+  font-weight: 600;
+  padding-right: 50px;
+}
+
+.portfolio .portfolio-item .portfolio-info p {
+  color: color-mix(in srgb, var(--default-color), transparent 30%);
+  font-size: 14px;
+  margin-bottom: 0;
+  padding-right: 50px;
+}
+
+.portfolio .portfolio-item .portfolio-info .preview-link,
+.portfolio .portfolio-item .portfolio-info .details-link {
+  position: absolute;
+  right: 50px;
+  font-size: 24px;
+  top: calc(50% - 14px);
+  color: color-mix(in srgb, var(--default-color), transparent 30%);
+  transition: 0.3s;
+  line-height: 0;
+}
+
+.portfolio .portfolio-item .portfolio-info .preview-link:hover,
+.portfolio .portfolio-item .portfolio-info .details-link:hover {
   color: var(--accent-color);
+}
+
+.portfolio .portfolio-item .portfolio-info .details-link {
+  right: 14px;
+  font-size: 28px;
+}
+
+.portfolio .portfolio-item:hover .portfolio-info {
+  opacity: 1;
+  bottom: 0;
+}
+
+/*--------------------------------------------------------------
+# Testimonials Section
+--------------------------------------------------------------*/
+.testimonials .testimonials-carousel,
+.testimonials .testimonials-slider {
+  overflow: hidden;
+}
+
+.testimonials .testimonial-item {
+  box-sizing: content-box;
+  min-height: 320px;
+}
+
+.testimonials .testimonial-item .testimonial-img {
+  width: 90px;
+  border-radius: 50%;
+  margin: -40px 0 0 40px;
+  position: relative;
+  z-index: 2;
+  border: 6px solid var(--background-color);
+}
+
+.testimonials .testimonial-item h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 10px 0 5px 45px;
+}
+
+.testimonials .testimonial-item h4 {
+  font-size: 14px;
+  color: color-mix(in srgb, var(--default-color), transparent 20%);
+  margin: 0 0 0 45px;
+}
+
+.testimonials .testimonial-item .quote-icon-left,
+.testimonials .testimonial-item .quote-icon-right {
+  color: color-mix(in srgb, var(--accent-color), transparent 50%);
+  font-size: 26px;
+  line-height: 0;
+}
+
+.testimonials .testimonial-item .quote-icon-left {
+  display: inline-block;
+  left: -5px;
+  position: relative;
+}
+
+.testimonials .testimonial-item .quote-icon-right {
+  display: inline-block;
+  right: -5px;
+  position: relative;
+  top: 10px;
+  transform: scale(-1, -1);
+}
+
+.testimonials .testimonial-item p {
+  font-style: italic;
+  margin: 0 15px 0 15px;
+  padding: 20px 20px 60px 20px;
+  background: color-mix(in srgb, var(--default-color), transparent 97%);
+  position: relative;
+  border-radius: 6px;
+  position: relative;
+  z-index: 1;
+}
+
+.testimonials .swiper-wrapper {
+  height: auto;
+}
+
+.testimonials .swiper-pagination {
+  margin-top: 20px;
+  position: relative;
+}
+
+.testimonials .swiper-pagination .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background-color: var(--background-color);
+  opacity: 1;
+  border: 1px solid var(--accent-color);
+}
+
+.testimonials .swiper-pagination .swiper-pagination-bullet-active {
+  background-color: var(--accent-color);
+}
+
+/*--------------------------------------------------------------
+# Contact Section
+--------------------------------------------------------------*/
+.contact .info-item+.info-item {
+  margin-top: 40px;
+}
+
+.contact .info-item i {
+  color: var(--accent-color);
+  background: color-mix(in srgb, var(--accent-color), transparent 92%);
+  font-size: 20px;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  transition: all 0.3s ease-in-out;
+  margin-right: 15px;
+}
+
+.contact .info-item h3 {
+  padding: 0;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.contact .info-item p {
+  padding: 0;
+  margin-bottom: 0;
+  font-size: 14px;
+}
+
+.contact .info-item:hover i {
+  background: var(--accent-color);
+  color: var(--contrast-color);
+}
+
+.contact .php-email-form {
+  height: 100%;
+}
+
+.contact .php-email-form input[type=text],
+.contact .php-email-form input[type=email],
+.contact .php-email-form textarea {
+  font-size: 14px;
+  padding: 10px 15px;
+  box-shadow: none;
+  border-radius: 0;
+  color: var(--default-color);
+  background-color: color-mix(in srgb, var(--background-color), transparent 50%);
+  border-color: color-mix(in srgb, var(--default-color), transparent 80%);
+}
+
+.contact .php-email-form input[type=text]:focus,
+.contact .php-email-form input[type=email]:focus,
+.contact .php-email-form textarea:focus {
+  border-color: var(--accent-color);
+}
+
+.contact .php-email-form input[type=text]::placeholder,
+.contact .php-email-form input[type=email]::placeholder,
+.contact .php-email-form textarea::placeholder {
+  color: color-mix(in srgb, var(--default-color), transparent 70%);
+}
+
+.contact .php-email-form button[type=submit] {
+  color: var(--contrast-color);
+  background: var(--accent-color);
+  border: 0;
+  padding: 10px 30px;
+  transition: 0.4s;
+  border-radius: 50px;
+}
+
+.contact .php-email-form button[type=submit]:hover {
+  background: color-mix(in srgb, var(--accent-color), transparent 25%);
 }
 
 /*--------------------------------------------------------------
@@ -1189,102 +1312,173 @@ section,
 .starter-section {
   /* Add your styles here */
 }
-
-/*--------------------------------------------------------------
-# Contact Section
---------------------------------------------------------------*/
-.contact {
-  background-image: url("../img/contact-bg.png");
-  background-position: left center;
-  background-repeat: no-repeat;
-  position: relative;
+/* Portfolio section background */
+#portfolio {
+  --background-color: #ffffff;
+  background-color: #ffffff;
 }
 
-@media (max-width: 640px) {
-  .contact {
-    background-position: center 50px;
-    background-size: contain;
+/* Square portfolio thumbnails */
+#portfolio .portfolio-item > img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Rounded portfolio thumbnails */
+#portfolio .portfolio-item > img {
+  border-radius: 16px;
+}
+
+/* Align a single portfolio action with the details icon position */
+#portfolio .portfolio-info .preview-link:not(:has(~ .details-link)) {
+  right: 14px;
+}
+
+/* Fixed rounded frame, image zoom and dark hover overlay */
+#portfolio .portfolio-thumbnail {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-radius: 16px;
+}
+#portfolio .portfolio-thumbnail > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.4s ease;
+}
+#portfolio .portfolio-thumbnail::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+#portfolio .portfolio-item:hover .portfolio-thumbnail > img {
+  transform: scale(1.06);
+}
+#portfolio .portfolio-item:hover .portfolio-thumbnail::after {
+  opacity: 1;
+}
+@media (prefers-reduced-motion: reduce) {
+  #portfolio .portfolio-thumbnail > img,
+  #portfolio .portfolio-thumbnail::after {
+    transition: none;
   }
 }
 
-.contact:before {
-  content: "";
-  background: color-mix(in srgb, var(--background-color), transparent 30%);
-  position: absolute;
-  bottom: 0;
-  top: 0;
-  left: 0;
-  right: 0;
+/* Full image lightbox with vertical scrolling */
+.glightbox-container .gslide-inner-content:has(.gslide-image) {
+  max-height: calc(100vh - 80px);
+  max-height: calc(100dvh - 80px);
+  overflow-y: auto;
+  overflow-x: hidden;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+}
+.glightbox-container .gslide-image {
+  display: block;
+  max-width: calc(100vw - 40px) !important;
+  max-height: none !important;
+  height: auto !important;
+}
+.glightbox-container .gslide-image img {
+  width: auto !important;
+  height: auto !important;
+  max-width: 100% !important;
+  max-height: none !important;
+  min-width: 0;
+  object-fit: contain;
+  touch-action: pan-y;
+}
+.glightbox-container .gslide-description {
+  display: none !important;
 }
 
-.contact .info-item+.info-item {
-  margin-top: 40px;
+/* Hide popup scrollbar while keeping vertical scrolling */
+.glightbox-container .gslide-inner-content:has(.gslide-image) {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.glightbox-container .gslide-inner-content:has(.gslide-image)::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
 }
 
-.contact .info-item i {
-  background: var(--accent-color);
-  color: var(--contrast-color);
-  font-size: 20px;
-  width: 44px;
-  height: 44px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50px;
-  transition: all 0.3s ease-in-out;
-  margin-right: 15px;
+/* Keep long popup images aligned to their top edge */
+.glightbox-container .gslide-inner-content:has(.gslide-image) {
+  align-items: flex-start;
+  overflow-anchor: none;
+  scroll-behavior: auto;
 }
-
-.contact .info-item h3 {
-  padding: 0;
-  font-size: 18px;
-  font-weight: 700;
-  margin-bottom: 5px;
-}
-
-.contact .info-item p {
-  padding: 0;
+.glightbox-container .gslide-image img {
+  margin-top: 0;
   margin-bottom: 0;
-  font-size: 14px;
 }
 
-.contact .php-email-form {
-  height: 100%;
+/* Mobile popup: start at image top and center horizontally */
+@media (max-width: 768px) {
+  .glightbox-container .gslide-inner-content:has(.gslide-image) {
+    width: calc(100vw - 32px);
+    margin-inline: auto;
+    display: block;
+    max-height: calc(100vh - 80px);
+    max-height: calc(100dvh - 80px);
+  }
+  .glightbox-container .ginner-container:has(.gslide-image) {
+    height: auto !important;
+    min-height: 0;
+    width: 100% !important;
+    display: block;
+    margin: 0 auto;
+  }
+  .glightbox-container .gslide-image {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto;
+  }
+  .glightbox-container .gslide-image img {
+    display: block;
+    max-width: 100% !important;
+    margin: 0 auto;
+  }
 }
 
-.contact .php-email-form input[type=text],
-.contact .php-email-form input[type=email],
-.contact .php-email-form textarea {
-  font-size: 14px;
-  padding: 10px 15px;
-  box-shadow: none;
-  border-radius: 0;
-  color: var(--default-color);
-  background-color: color-mix(in srgb, var(--background-color), transparent 50%);
-  border-color: color-mix(in srgb, var(--default-color), transparent 80%);
+/* Popup images fill the available popup width */
+.glightbox-container .gslide-inner-content:has(.gslide-image) {
+  width: min(860px, calc(100vw - 40px));
+  margin-inline: auto;
+  display: block;
+}
+.glightbox-container .ginner-container:has(.gslide-image) {
+  width: 100% !important;
+  height: auto !important;
+  display: block;
+}
+.glightbox-container .gslide-image {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+.glightbox-container .gslide-image img {
+  width: 100% !important;
+  height: auto !important;
+  max-width: 100% !important;
+  max-height: none !important;
+}
+@media (max-width: 768px) {
+  .glightbox-container .gslide-inner-content:has(.gslide-image) {
+    width: calc(100vw - 32px);
+  }
 }
 
-.contact .php-email-form input[type=text]:focus,
-.contact .php-email-form input[type=email]:focus,
-.contact .php-email-form textarea:focus {
-  border-color: var(--accent-color);
-}
-
-.contact .php-email-form input[type=text]::placeholder,
-.contact .php-email-form input[type=email]::placeholder,
-.contact .php-email-form textarea::placeholder {
-  color: color-mix(in srgb, var(--default-color), transparent 70%);
-}
-
-.contact .php-email-form button[type=submit] {
-  color: var(--contrast-color);
-  background: var(--accent-color);
-  border: 0;
-  padding: 10px 30px;
-  transition: 0.4s;
-  border-radius: 50px;
-}
-
-.contact .php-email-form button[type=submit]:hover {
-  background: color-mix(in srgb, var(--accent-color), transparent 20%);
+#portfolio a.portfolio-thumbnail {
+  display: block;
 }
