@@ -640,8 +640,7 @@ section,
 # Hero Section
 --------------------------------------------------------------*/
 .hero {
-  background: url(../img/hero-bg.jpg) top center no-repeat;
-  background-size: cover;
+  background: linear-gradient(135deg, #f7eeee 0%, #f4e6e6 52%, #eee8e5 100%);
   width: 100%;
   min-height: 90vh;
   position: relative;
@@ -750,102 +749,6 @@ section,
   margin-right: 5px;
   color: var(--accent-color);
   line-height: 0;
-}
-
-/*--------------------------------------------------------------
-# Skills Section
---------------------------------------------------------------*/
-.skills .progress {
-  height: 60px;
-  display: block;
-  background: none;
-  border-radius: 0;
-}
-
-.skills .progress .skill {
-  color: var(--heading-color);
-  padding: 0;
-  margin: 0 0 6px 0;
-  text-transform: uppercase;
-  display: block;
-  font-weight: 600;
-  font-family: var(--heading-font);
-}
-
-.skills .progress .skill .val {
-  float: right;
-  font-style: normal;
-}
-
-.skills .progress-bar-wrap {
-  background: color-mix(in srgb, var(--default-color), transparent 90%);
-  height: 10px;
-}
-
-.skills .progress-bar {
-  width: 1px;
-  height: 10px;
-  transition: 0.9s;
-  background-color: var(--accent-color);
-}
-
-/*--------------------------------------------------------------
-# Resume Section
---------------------------------------------------------------*/
-.resume .resume-title {
-  color: var(--heading-color);
-  font-size: 26px;
-  font-weight: 700;
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
-.resume .resume-item {
-  padding: 0 0 20px 20px;
-  margin-top: -2px;
-  border-left: 2px solid var(--accent-color);
-  position: relative;
-}
-
-.resume .resume-item h4 {
-  line-height: 18px;
-  font-size: 18px;
-  font-weight: 600;
-  text-transform: uppercase;
-  color: color-mix(in srgb, var(--default-color), transparent 20%);
-  margin-bottom: 10px;
-}
-
-.resume .resume-item h5 {
-  font-size: 16px;
-  padding: 5px 15px;
-  display: inline-block;
-  font-weight: 600;
-  margin-bottom: 10px;
-}
-
-.resume .resume-item ul {
-  padding-left: 20px;
-}
-
-.resume .resume-item ul li {
-  padding-bottom: 10px;
-}
-
-.resume .resume-item:last-child {
-  padding-bottom: 0;
-}
-
-.resume .resume-item::before {
-  content: "";
-  position: absolute;
-  width: 16px;
-  height: 16px;
-  border-radius: 50px;
-  left: -9px;
-  top: 0;
-  background: var(--background-color);
-  border: 2px solid var(--accent-color);
 }
 
 /*--------------------------------------------------------------
@@ -1481,4 +1384,221 @@ section,
 
 #portfolio a.portfolio-thumbnail {
   display: block;
+}
+
+
+/*--------------------------------------------------------------
+# Refined portfolio project cards
+--------------------------------------------------------------*/
+#portfolio {
+  --background-color: #fff;
+  background: #fff;
+  padding-top: 76px;
+  padding-bottom: 88px;
+}
+
+#portfolio .section-title {
+  padding-bottom: 38px;
+}
+
+#portfolio .section-title h2 {
+  letter-spacing: -0.035em;
+  color: #26364a;
+}
+
+#portfolio .section-title p {
+  color: #7b8490;
+  font-size: 14px;
+  letter-spacing: 0.025em;
+}
+
+#portfolio .portfolio-filters {
+  margin-bottom: 30px;
+}
+
+#portfolio .portfolio-filters li {
+  background: #f5f5f4;
+  color: #626b75;
+  border: 1px solid transparent;
+  padding: 9px 19px;
+  font-size: 13px;
+  letter-spacing: 0.02em;
+  transition: color .25s ease, background .25s ease, border-color .25s ease;
+}
+
+#portfolio .portfolio-filters li:hover,
+#portfolio .portfolio-filters li.filter-active {
+  background: #fff;
+  color: #26364a;
+  border-color: #e7a0aa;
+}
+
+#portfolio .isotope-container {
+  row-gap: 28px;
+}
+
+#portfolio .portfolio-item {
+  overflow: visible;
+}
+
+#portfolio .portfolio-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  color: inherit;
+  text-decoration: none;
+  background: #fff;
+  border: 1px solid rgba(35, 48, 62, .055);
+  border-radius: 17px;
+  box-shadow: 0 7px 22px rgba(30, 43, 58, .075);
+  transition: transform .35s ease, box-shadow .35s ease;
+}
+
+#portfolio .portfolio-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 34px rgba(30, 43, 58, .13);
+}
+
+#portfolio .portfolio-card__image {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1.48 / 1;
+  overflow: hidden;
+  background: #f5f4f1;
+}
+
+#portfolio .portfolio-card__image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform .55s cubic-bezier(.2,.7,.2,1);
+}
+
+#portfolio .portfolio-card:hover .portfolio-card__image img {
+  transform: scale(1.045);
+}
+
+/* Figma app thumbnail uses the same card shape and hover treatment as other projects. */
+#portfolio .portfolio-card--figma .portfolio-card__image img {
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Preserve the full banner composition in its landscape thumbnail. */
+#portfolio .portfolio-card--banner .portfolio-card__image img {
+  object-fit: contain;
+  background: #eaf6ff;
+}
+
+/* The poster is square; keep its main artwork centered in the wider card. */
+#portfolio .portfolio-card--poster .portfolio-card__image img {
+  object-position: center 48%;
+}
+
+#portfolio .portfolio-card__caption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 82px;
+  padding: 15px 18px 16px;
+  background: linear-gradient(115deg, #fff 0%, #fbf7f5 100%);
+}
+
+#portfolio .portfolio-card__text {
+  min-width: 0;
+}
+
+#portfolio .portfolio-card__category {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 7px;
+  color: #68727d;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .19em;
+  line-height: 1.2;
+}
+
+#portfolio .portfolio-card__category::before {
+  content: "";
+  display: inline-block;
+  width: 3px;
+  height: 13px;
+  border-radius: 2px;
+  background: #df8e9b;
+}
+
+#portfolio .portfolio-card__caption h3 {
+  margin: 0;
+  color: #27313b;
+  font-size: clamp(15px, 1.15vw, 18px);
+  font-weight: 700;
+  letter-spacing: -.045em;
+  line-height: 1.35;
+  word-break: keep-all;
+}
+
+#portfolio .portfolio-card__arrow {
+  flex: 0 0 39px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 39px;
+  height: 39px;
+  color: #34414d;
+  border: 1px solid rgba(52, 65, 77, .65);
+  border-radius: 50%;
+  font-size: 17px;
+  transition: color .3s ease, background .3s ease, border-color .3s ease, transform .3s ease;
+}
+
+#portfolio .portfolio-card:hover .portfolio-card__arrow {
+  color: #fff;
+  background: #344b60;
+  border-color: #344b60;
+  transform: translate(2px, -2px);
+}
+
+#portfolio .portfolio-card:focus-visible {
+  outline: 3px solid rgba(223, 142, 155, .55);
+  outline-offset: 4px;
+}
+
+@media (max-width: 767px) {
+  #portfolio {
+    padding-top: 56px;
+    padding-bottom: 64px;
+  }
+
+  #portfolio .portfolio-card__image {
+    aspect-ratio: 1.35 / 1;
+  }
+
+  #portfolio .portfolio-card__caption {
+    min-height: 76px;
+    padding: 13px 14px;
+  }
+
+  #portfolio .portfolio-card__caption h3 {
+    font-size: 15px;
+  }
+
+  #portfolio .portfolio-card__arrow {
+    flex-basis: 35px;
+    width: 35px;
+    height: 35px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #portfolio .portfolio-card,
+  #portfolio .portfolio-card__image img,
+  #portfolio .portfolio-card__arrow {
+    transition: none;
+  }
 }
