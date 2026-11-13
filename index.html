@@ -1,21 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Index - Lonely Bootstrap Template</title>
+  <title>PLAIN. | Design Portfolio</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
 
   <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg?v=3">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -41,18 +41,16 @@
   <header id="header" class="header d-flex align-items-center sticky-top">
     <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 
-      <a href="index.html" class="logo d-flex align-items-center">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="assets/img/logo.png" alt=""> -->
-        <h1 class="sitename">Lonely</h1>
+      <a href="index.html" class="logo d-flex align-items-center" aria-label="PLAIN 홈으로 이동">
+        <img src="assets/img/favicon.svg" class="plain-logo-mark" alt="" aria-hidden="true">
+        <h1 class="sitename">PLAIN<span>.</span></h1>
       </a>
 
       <nav id="navmenu" class="navmenu">
         <ul>
           <li><a href="#hero" class="active">Home</a></li>
-          <li><a href="#about">About</a></li>
-
           <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#about">About</a></li>
 
 
         </ul>
@@ -65,14 +63,20 @@
   <main class="main">
 
     <!-- Hero Section -->
-    <section id="hero" class="hero section dark-background">
-
-      <div class="container text-center" data-aos="fade-up" data-aos-delay="100">
-        <h2>Hi, I'm Alice!</h2>
-        <p>I am a graphic designer living in New York<br></p>
-        <a href="#about" class="btn-scroll" title="Scroll Down"><i class="bi bi-chevron-down"></i></a>
+    <section id="hero" class="hero section plain-hero">
+      <div class="container plain-hero__inner" data-aos="fade-up" data-aos-delay="100">
+        <div class="plain-hero__copy">
+          <p class="plain-hero__eyebrow">PORTFOLIO WEBSITE</p>
+          <h2>PLAIN<span>.</span></h2>
+          <p class="plain-hero__subtitle">Design Portfolio</p>
+          <p class="plain-hero__description">복잡함을 덜어내고, 디자인의 본질에 집중한<br class="d-none d-md-block"> 서진아의 포트폴리오입니다.</p>
+          <div class="plain-hero__actions">
+            <a href="#portfolio" class="plain-button plain-button--dark">View Work <i class="bi bi-arrow-up-right"></i></a>
+            <a href="#about" class="plain-button plain-button--outline">About Me</a>
+          </div>
+        </div>
+        <a href="#portfolio" class="plain-hero__visual" aria-label="포트폴리오 작업 보기"></a>
       </div>
-
     </section><!-- /Hero Section -->
 
     <!-- About Section -->
@@ -287,16 +291,20 @@
             </div><!--th_10(video) End Portfolio Item -->
 
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-teamproject">
-              <div class="portfolio-thumbnail">
-                <img src="assets/img/thumbnails/./th_13(Team).png" class="img-fluid" alt="TeamProject sample">
-              </div>
-              <div class="portfolio-info">
-                <h4>TeamProject 1</h4>
-                <p>Team project sample</p>
-                <a href="assets/img/details/./d_14.png" data-gallery="portfolio-gallery-teamproject" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
+              <a href="team/dongbaek/index.html" target="_blank" rel="noopener noreferrer"
+                 class="portfolio-card portfolio-card--team" aria-label="TEAM PROJECT: 동백커피 브랜드 홈페이지" title="TEAM PROJECT · 동백커피 브랜드 홈페이지">
+                <div class="portfolio-card__image">
+                  <img src="assets/img/thumbnails/th_14_team_dongbaek.png" class="img-fluid" alt="동백커피 브랜드 홈페이지 팀 프로젝트 썸네일">
+                </div>
+                <div class="portfolio-card__caption">
+                  <div class="portfolio-card__text">
+                    <span class="portfolio-card__category">TEAM PROJECT</span>
+                    <h3>동백커피 브랜드 홈페이지</h3>
+                  </div>
+                  <span class="portfolio-card__arrow" aria-hidden="true"><i class="bi bi-arrow-up-right"></i></span>
+                </div>
+              </a>
+            </div><!-- End 동백커피 팀 프로젝트 Portfolio Item -->
 
           </div><!-- End Portfolio Container -->
 

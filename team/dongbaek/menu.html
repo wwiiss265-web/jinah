@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="동백커피의 다양한 커피와 음료, 디저트를 만나보세요.">
+  <title>메뉴 | DONGBAEK COFFEE</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/subpages.css">
+  <link rel="stylesheet" href="css/menu.css">
+</head>
+<body class="menu-page">
+  <header class="site-header" id="top">
+    <div class="header-inner">
+      <a class="brand" href="index.html" aria-label="동백커피 홈"><img src="img/logo.png" alt="동백커피 로고"></a>
+      <button class="menu-toggle" aria-label="메뉴 열기" aria-expanded="false"><span></span><span></span><span></span></button>
+      <nav class="main-nav" aria-label="주 메뉴">
+        <div class="nav-dropdown">
+          <a class="nav-parent" href="brand.html" aria-haspopup="true">브랜드 소개 <span class="nav-caret">⌄</span></a>
+          <div class="sub-nav">
+            <a  href="brand.html">브랜드 소개</a>
+            <a  href="character.html">캐릭터 소개</a>
+          </div>
+        </div>
+        <a class="current" aria-current="page" href="menu.html">메뉴</a>
+        <a href="index.html#store">매장안내</a>
+        <a href="index.html#event">이벤트</a>
+        <a href="index.html#customer">고객센터</a>
+      </nav>
+      <div class="header-tools">
+        <button class="icon-button search-toggle" aria-label="검색 열기">⌕</button>
+        <button class="icon-button all-menu-toggle" aria-label="전체 메뉴">☰</button>
+      </div>
+    </div>
+    <div class="search-panel" aria-hidden="true">
+      <form class="search-form"><label for="site-search">무엇을 찾으세요?</label><input id="site-search" type="search" placeholder="메뉴, 매장, 이벤트 검색"><button type="submit">검색</button></form>
+    </div>
+  </header>
+
+  <main>
+    <section class="menu-hero">
+      <img src="img/menu-hero.jpg" alt="동백커피 메뉴와 동백꽃 캐릭터">
+      <div class="menu-hero-copy">
+        <p class="menu-eyebrow">MENU</p>
+        <h1>메뉴</h1>
+        <p>동백커피의 다양한 음료와 디저트를<br>지금 만나보세요.</p>
+      </div>
+    </section>
+
+    <div class="menu-breadcrumb container"><a href="index.html">홈</a><span>›</span><strong>메뉴</strong></div>
+
+    <section class="menu-category container" aria-label="메뉴 카테고리">
+      <button class="category-chip active" data-category="all"><span>♨</span>전체 메뉴</button>
+      <button class="category-chip" data-category="coffee"><span>☕</span>커피</button>
+      <button class="category-chip" data-category="drink"><span>♧</span>음료</button>
+      <button class="category-chip" data-category="tea"><span>♧</span>티</button>
+      <button class="category-chip" data-category="dessert"><span>♙</span>디저트</button>
+      <button class="category-chip" data-category="season"><span>❄</span>시즌 메뉴</button>
+    </section>
+
+    <section class="menu-content container">
+      <aside class="menu-sidebar">
+        <h2>메뉴</h2>
+        <nav class="side-category" aria-label="메뉴 종류">
+          <button class="active" data-category="all">전체 메뉴 <span>›</span></button>
+          <button data-category="coffee">커피</button>
+          <button data-category="drink">음료</button>
+          <button data-category="tea">티</button>
+          <button data-category="dessert">디저트</button>
+          <button data-category="season">시즌 메뉴</button>
+        </nav>
+        <a class="sidebar-promo" href="#menu-list">
+          <img src="img/menu-sidebar-promo.jpg" alt="동백커피 시즌 메뉴 캐릭터">
+          <span>동백커피<br>신메뉴 만나보기!</span>
+          <b>시즌 메뉴 보기　›</b>
+        </a>
+      </aside>
+
+      <div class="menu-results">
+        <div class="menu-results-head">
+          <h2><span id="category-title">전체 메뉴</span> <small>(<span id="menu-count">8</span>)</small></h2>
+          <label class="sort-label">
+            <span class="sr-only">메뉴 정렬</span>
+            <select id="menu-sort">
+              <option value="recommended">추천순</option>
+              <option value="popular">인기순</option>
+              <option value="low">낮은 가격순</option>
+              <option value="high">높은 가격순</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="product-grid" id="menu-list">
+          <article class="menu-item" data-category="coffee" data-price="5800" data-popular="1">
+            <div class="menu-item-image"><img src="img/menu-signature-latte.jpg" alt="동백 시그니처 라떼"><span class="product-badge best">♛ BEST</span></div>
+            <div class="menu-item-info"><h3>동백 시그니처 라떼</h3><p>동백커피의 대표 시그니처 메뉴</p><strong>₩ 5,800</strong></div>
+          </article>
+          <article class="menu-item" data-category="season" data-price="6200" data-popular="2">
+            <div class="menu-item-image"><img src="img/menu-strawberry-latte.jpg" alt="딸기 동백 라떼"><span class="product-badge new">NEW</span></div>
+            <div class="menu-item-info"><h3>딸기 동백 라떼</h3><p>달콤하고 부드러운 시즌 한정 라떼</p><strong>₩ 6,200</strong></div>
+          </article>
+          <article class="menu-item" data-category="coffee" data-price="4500" data-popular="3">
+            <div class="menu-item-image"><img src="img/menu-americano.jpg" alt="동백 아메리카노"></div>
+            <div class="menu-item-info"><h3>동백 아메리카노</h3><p>깊고 깔끔한 동백커피의 아메리카노</p><strong>₩ 4,500</strong></div>
+          </article>
+          <article class="menu-item" data-category="coffee" data-price="5000" data-popular="4">
+            <div class="menu-item-image"><img src="img/menu-cafe-latte.jpg" alt="카페라떼"></div>
+            <div class="menu-item-info"><h3>카페라떼</h3><p>부드럽고 고소한 클래식 라떼</p><strong>₩ 5,000</strong></div>
+          </article>
+          <article class="menu-item" data-category="dessert" data-price="6800" data-popular="5">
+            <div class="menu-item-image"><img src="img/menu-cake.jpg" alt="동백 케이크"></div>
+            <div class="menu-item-info"><h3>동백 케이크</h3><p>동백꽃을 얹은 시그니처 케이크</p><strong>₩ 6,800</strong></div>
+          </article>
+          <article class="menu-item" data-category="dessert" data-price="6500" data-popular="6">
+            <div class="menu-item-image"><img src="img/menu-chocolate-cake.jpg" alt="가을 시즌 케이크"></div>
+            <div class="menu-item-info"><h3>가을 시즌 케이크</h3><p>진한 초콜릿의 깊은 풍미</p><strong>₩ 6,500</strong></div>
+          </article>
+          <article class="menu-item" data-category="dessert" data-price="4300" data-popular="7">
+            <div class="menu-item-image"><img src="img/menu-scone.jpg" alt="동백 스콘"></div>
+            <div class="menu-item-info"><h3>동백 스콘</h3><p>겉은 바삭, 속은 촉촉한 수제 스콘</p><strong>₩ 4,300</strong></div>
+          </article>
+          <article class="menu-item" data-category="dessert" data-price="5500" data-popular="8">
+            <div class="menu-item-image"><img src="img/menu-yogurt.jpg" alt="베리 요거트컵"></div>
+            <div class="menu-item-info"><h3>베리 요거트컵</h3><p>상큼한 베리와 부드러운 요거트</p><strong>₩ 5,500</strong></div>
+          </article>
+        </div>
+        <p class="no-menu" hidden>해당 카테고리에 등록된 메뉴가 없습니다.</p>
+        <nav class="pagination" aria-label="메뉴 페이지">
+          <button aria-label="이전 페이지" disabled>‹</button><button class="selected">1</button><button>2</button><button>3</button><button>4</button><span>…</span><button>8</button><button aria-label="다음 페이지">›</button>
+        </nav>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="customer">
+    <div class="footer-inner container">
+      <a class="footer-brand" href="index.html">✿ <span>DONGBAEK<br>COFFEE</span></a>
+      <div class="footer-info">
+        <div class="footer-links"><a href="#customer">이용약관</a><a href="#customer">개인정보처리방침</a><a href="#customer">고객센터</a><a href="#top">사이트맵</a></div>
+        <p>부산광역시 해운대구 센텀중앙로 000 (센텀동)　|　대표번호 051-123-4567　|　사업자등록번호 123-45-67890</p>
+        <small>© 2026 DONGBAEK COFFEE. All rights reserved.</small>
+      </div>
+      <div class="social-links"><a href="#customer" aria-label="인스타그램">◎</a><a href="#customer" aria-label="유튜브">▶</a><a href="#customer" aria-label="블로그">b</a><a href="#customer" aria-label="네이버">N</a></div>
+    </div>
+  </footer>
+  <button class="top-button" aria-label="맨 위로 이동">↑</button>
+  <script src="js/main.js"></script>
+  <script src="js/menu.js"></script>
+</body>
+</html>
