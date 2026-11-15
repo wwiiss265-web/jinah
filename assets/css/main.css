@@ -1722,12 +1722,97 @@ body { font-family: var(--default-font); }
 }
 
 
-/* Dongbaek Coffee team-project thumbnail: preserve the full 16:9 artwork. */
-#portfolio .portfolio-card--team .portfolio-card__image {
-  aspect-ratio: 16 / 9;
-  background: #f7f1ea;
+/* Video portfolio cards: same visual system as the other portfolio thumbnails */
+#portfolio .portfolio-card--video .portfolio-card__image {
+  aspect-ratio: 1.48 / 1;
 }
-#portfolio .portfolio-card--team .portfolio-card__image img {
+#portfolio .portfolio-card--video .portfolio-card__image img {
   object-fit: cover;
-  object-position: center;
+}
+#portfolio .portfolio-video-play {
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  top: 50%;
+  width: 58px;
+  height: 58px;
+  display: grid;
+  place-items: center;
+  transform: translate(-50%, -50%);
+  border: 2px solid rgba(255,255,255,.95);
+  border-radius: 50%;
+  color: #fff;
+  background: rgba(20,20,20,.48);
+  font-size: 34px;
+  line-height: 1;
+  transition: background .25s ease, transform .25s ease;
+}
+#portfolio .portfolio-card--video:hover .portfolio-video-play {
+  background: rgba(20,20,20,.68);
+  transform: translate(-50%, -50%) scale(1.06);
+}
+
+
+/* FIX: center the play button inside each video thumbnail */
+#portfolio .portfolio-card--video .portfolio-card__image {
+  position: relative !important;
+  overflow: hidden !important;
+}
+#portfolio .portfolio-card--video .portfolio-card__image .portfolio-video-play {
+  position: absolute !important;
+  left: 50% !important;
+  top: 50% !important;
+  right: auto !important;
+  bottom: auto !important;
+  width: 62px !important;
+  height: 62px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transform: translate(-50%, -50%) !important;
+  border: 2px solid rgba(255,255,255,.96) !important;
+  border-radius: 50% !important;
+  background: rgba(20,20,20,.48) !important;
+  color: #fff !important;
+  z-index: 5 !important;
+  pointer-events: none !important;
+  line-height: 1 !important;
+  font-size: 34px !important;
+}
+#portfolio .portfolio-card--video .portfolio-card__image .portfolio-video-play i {
+  display: block !important;
+  font-size: 34px !important;
+  line-height: 1 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+#portfolio .portfolio-card--video:hover .portfolio-card__image .portfolio-video-play {
+  background: rgba(20,20,20,.66) !important;
+  transform: translate(-50%, -50%) scale(1.06) !important;
+}
+
+/* PLAIN video thumbnail: use the supplied video.svg play artwork */
+#portfolio .portfolio-card--video .portfolio-card__image .portfolio-video-play {
+  width: 72px !important;
+  height: 72px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  display: block !important;
+  line-height: 0 !important;
+  transform: translate(-50%, -50%) !important;
+}
+#portfolio .portfolio-card--video .portfolio-card__image .portfolio-video-play img {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+}
+#portfolio .portfolio-card--video:hover .portfolio-card__image .portfolio-video-play {
+  background: transparent !important;
+  transform: translate(-50%, -50%) scale(1.06) !important;
 }

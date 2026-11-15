@@ -1,168 +1,569 @@
-<!DOCTYPE html>
-<html lang="en">
 
+<!DOCTYPE html>
+<html lang="ko">
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Video Details - Lonely Bootstrap Template</title>
-  <meta name="description" content="">
-  <meta name="keywords" content="">
+  <title>Video Project | PLAIN.</title>
+  <meta name="description" content="Video portfolio project details">
 
-  <!-- Favicons -->
   <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg?v=2">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-  <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
-  <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: Lonely
-  * Template URL: https://bootstrapmade.com/free-html-bootstrap-template-lonely/
-  * Updated: Aug 07 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+  <style>
+    body.video-project-page {
+      background: #faf8f4;
+      color: #352f2a;
+    }
+
+    .video-project-page .header {
+      background: rgba(250,248,244,.96);
+    }
+
+    .video-project-page .sitename,
+    .video-project-page .page-title h1,
+    .video-project-page h2,
+    .video-project-page h3 {
+      color: #514033;
+    }
+
+    .video-project-page .page-title {
+      background: #eee7de;
+    }
+
+    .video-project-section {
+      padding: 54px 0 76px;
+    }
+
+    .video-project-layout {
+      display: grid;
+      grid-template-columns: minmax(0,1.65fr) minmax(280px,1fr);
+      gap: 38px;
+      align-items: start;
+    }
+
+    .video-player-frame {
+      position: relative;
+      overflow: hidden;
+      border-radius: 14px;
+      background: #171717;
+      box-shadow: 0 12px 30px rgba(53,43,32,.12);
+    }
+
+    .video-player-frame video {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: contain;
+      background: #171717;
+    }
+
+    .video-placeholder {
+      display: none;
+      padding: 70px 24px;
+      color: #fff;
+      text-align: center;
+      aspect-ratio: 16/9;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .video-placeholder i {
+      font-size: 46px;
+    }
+
+    .video-project-label {
+      display: inline-block;
+      padding: 8px 18px;
+      border-radius: 30px;
+      background: #e9dfd2;
+      color: #695747;
+      font-size: 13px;
+      letter-spacing: .08em;
+      font-weight: 600;
+    }
+
+    .video-project-info h2 {
+      margin: 18px 0 12px;
+      font-size: clamp(26px,3vw,38px);
+      font-weight: 700;
+      letter-spacing: -.04em;
+      line-height: 1.2;
+    }
+
+    .video-project-summary {
+      color: #756e67;
+      font-size: 15px;
+      line-height: 1.85;
+      margin-bottom: 24px;
+    }
+
+    .video-meta {
+      border-top: 1px solid #e5ddd3;
+      padding-top: 20px;
+    }
+
+    .video-meta-row {
+      display: grid;
+      grid-template-columns: 110px 1fr;
+      gap: 14px;
+      padding: 12px 0;
+      border-bottom: 1px solid #eee8e0;
+    }
+
+    .video-meta-row strong {
+      color: #8a7868;
+      font-size: 12px;
+      letter-spacing: .08em;
+    }
+
+    .video-meta-row span {
+      color: #4c443d;
+      font-size: 14px;
+    }
+
+    .video-keywords {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+
+    .video-keywords em {
+      font-style: normal;
+      padding: 5px 10px;
+      border-radius: 20px;
+      background: #eee8e0;
+      font-size: 12px;
+    }
+
+    .video-stills {
+      margin-top: 42px;
+    }
+
+    .video-stills h3 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .video-still-grid {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 14px;
+    }
+
+    .video-still-grid img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      border-radius: 9px;
+    }
+
+    /* 동래 축제와 First Drive 스틸 컷 잘림 방지 */
+    .video-still-grid.stills-contain img {
+      object-fit: contain;
+      background: #eee8e0;
+    }
+
+    .video-back {
+      color: #806d5c;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    @media (max-width: 991px) {
+      .video-project-layout {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+    }
+
+    @media (max-width: 575px) {
+      .video-project-section {
+        padding: 30px 0 52px;
+      }
+
+      .video-meta-row {
+        grid-template-columns: 88px 1fr;
+      }
+
+      .video-still-grid {
+        grid-template-columns: repeat(2,1fr);
+      }
+    }
+  </style>
 </head>
 
-<body class="portfolio-details-page">
+<body class="portfolio-details-page video-project-page">
 
-  <header id="header" class="header d-flex align-items-center sticky-top">
-    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+<header id="header" class="header d-flex align-items-center sticky-top">
+  <div class="container container-xl position-relative d-flex align-items-center justify-content-between">
 
-      <a href="index.html" class="logo d-flex align-items-center">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="assets/img/logo.png" alt=""> -->
-        <h1 class="sitename">Lonely</h1>
-      </a>
+    <a href="index.html" class="logo d-flex align-items-center">
+      <h1 class="sitename">PLAIN.</h1>
+    </a>
 
-      <nav id="navmenu" class="navmenu">
-        <ul>
-          <li><a href="index.html#hero">Home</a></li>
-          <li><a href="index.html#about">About</a></li>
+    <nav id="navmenu" class="navmenu">
+      <ul>
+        <li><a href="index.html#hero">Home</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#portfolio">Portfolio</a></li>
+      </ul>
+      <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+    </nav>
 
-          <li><a href="index.html#portfolio">Portfolio</a></li>
+  </div>
+</header>
 
-
-        </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-      </nav>
-
-    </div>
-  </header>
-
-  <main class="main">
-
-    <!-- Page Title -->
-    <div class="page-title light-background">
-      <div class="container d-lg-flex justify-content-between align-items-center">
-        <h1 class="mb-2 mb-lg-0">Video Details</h1>
-        <nav class="breadcrumbs">
-          <ol>
-            <li><a href="index.html">Home</a></li>
-            <li class="current">Video Details</li>
-          </ol>
-        </nav>
-      </div>
-    </div><!-- End Page Title -->
-
-    <!-- Video Details Section -->
-    <section id="portfolio-details" class="portfolio-details section">
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row gy-4">
-
-          <div class="col-lg-8">
-            <video class="w-100 rounded" controls playsinline preload="metadata" style="aspect-ratio: 16 / 9; background: #000;">
-              <!-- Replace this file with your MP4 video. -->
-              <source src="assets/video/video-sample.mp4" type="video/mp4">
-              Your browser does not support video playback.
-            </video>
-          </div>
-
-          <div class="col-lg-4">
-            <div class="portfolio-info" data-aos="fade-up" data-aos-delay="200">
-              <h3>Project information</h3>
-              <ul>
-                <li><strong>Category</strong>: Video</li>
-                <li><strong>Client</strong>: ASU Company</li>
-                <li><strong>Project date</strong>: 01 March, 2020</li>
-                <li><strong>Project URL</strong>: <a href="#">www.example.com</a></li>
-              </ul>
-            </div>
-            <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">
-              <h2>Video Project</h2>
-              <p>
-                Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia. Video Project non officia eaque itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt eius.
-              </p>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-
-    </section><!-- /Video Details Section -->
-
-  </main>
-
-  <footer id="footer" class="footer light-background">
+<main class="main">
+  <section class="video-project-section">
     <div class="container">
-      <h3 class="sitename">Lonely</h3>
-      <p>Et aut eum quis fuga eos sunt ipsa nihil. Labore corporis magni eligendi fuga maxime saepe commodi placeat.</p>
-      <div class="social-links d-flex justify-content-center">
-        <a href=""><i class="bi bi-twitter-x"></i></a>
-        <a href=""><i class="bi bi-facebook"></i></a>
-        <a href=""><i class="bi bi-instagram"></i></a>
-        <a href=""><i class="bi bi-skype"></i></a>
-        <a href=""><i class="bi bi-linkedin"></i></a>
-      </div>
-      <div class="container">
-        <div class="copyright">
-          <span>Copyright</span> <strong class="px-1 sitename">Lonely</strong> <span>All Rights Reserved</span>
+
+      <div class="video-project-layout">
+
+        <div class="video-player-frame">
+
+          <video
+            id="project-video"
+            controls
+            playsinline
+            preload="metadata"
+            poster=""
+          >
+            Your browser does not support video playback.
+          </video>
+
+          <div class="video-placeholder" id="video-placeholder">
+            <i class="bi bi-film"></i>
+            <strong>영상 프로젝트</strong>
+            <span>영상의 주요 장면을 감상해 보세요.</span>
+          </div>
+
         </div>
-        <div class="credits">
-          <!-- All the links in the footer should remain intact. -->
-          <!-- You can delete the links only if you've purchased the pro version. -->
-          <!-- Licensing information: https://bootstrapmade.com/license/ -->
-          <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-          Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> | <a href="https://bootstrapmade.com/tools/">DevTools</a>
+
+        <div class="video-project-info">
+
+          <span class="video-project-label" id="project-category">
+            VIDEO PROJECT
+          </span>
+
+          <h2 id="project-title">영상 프로젝트</h2>
+
+          <p class="video-project-summary" id="project-summary"></p>
+
+          <div class="video-meta">
+
+            <div class="video-meta-row">
+              <strong>CONCEPT</strong>
+              <span id="project-concept"></span>
+            </div>
+
+            <div class="video-meta-row">
+              <strong>KEYWORD</strong>
+              <span class="video-keywords" id="project-keywords"></span>
+            </div>
+
+            <div class="video-meta-row">
+              <strong>PRODUCTION</strong>
+              <span id="project-production"></span>
+            </div>
+
+            <div class="video-meta-row">
+              <strong>TOOL</strong>
+              <span id="project-tool"></span>
+            </div>
+
+          </div>
         </div>
+
       </div>
+
+      <div class="video-stills">
+        <h3>영상 속 주요 장면</h3>
+        <div class="video-still-grid" id="project-stills"></div>
+      </div>
+
+      <div class="mt-4">
+        <a class="video-back" href="index.html#portfolio">
+          <i class="bi bi-arrow-left"></i>
+          포트폴리오로 돌아가기
+        </a>
+      </div>
+
     </div>
-  </footer>
+  </section>
+</main>
 
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+<footer id="footer" class="footer light-background">
+  <div class="container">
 
-  <!-- Preloader -->
-  <div id="preloader"></div>
+    <h3 class="sitename">PLAIN.</h3>
 
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <div class="copyright">
+      <span>Copyright</span>
+      <strong class="px-1 sitename">PLAIN.</strong>
+      <span>All Rights Reserved</span>
+    </div>
 
-  <!-- Main JS File -->
-  <script src="assets/js/main.js"></script>
+    <div class="credits">
+      Designed by
+      <a href="https://bootstrapmade.com/">BootstrapMade</a>
+    </div>
+
+  </div>
+</footer>
+
+<a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center">
+  <i class="bi bi-arrow-up-short"></i>
+</a>
+
+<div id="preloader"></div>
+
+<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="assets/vendor/aos/aos.js"></script>
+<script src="assets/js/main.js"></script>
+
+<script>
+  const videoProjects = {
+
+    "1": {
+      title: "나만의 핫플레이스 – 옥련선원",
+      category: "TRAVEL VIDEO",
+      summary: "전통 공간의 풍경과 그 안에 담긴 이야기를 영상으로 기록한 여행 콘텐츠입니다.",
+      concept: "공간의 분위기와 장면을 따라가는 감성 여행 영상",
+      keywords: [
+        "#나만의핫플레이스",
+        "#전통공간",
+        "#여행영상",
+        "#영상편집"
+      ],
+      production: "기획 · 촬영 · 편집",
+      tool: "Premiere Pro",
+      poster: "assets/img/thumbnails/th_08(video).png",
+      videoFile: "assets/video/hotplace.mp4",
+      stills: [
+        "assets/img/video-stills/hotplace-01.jpg",
+        "assets/img/video-stills/hotplace-02.jpg",
+        "assets/img/video-stills/hotplace-03.jpg",
+        "assets/img/video-stills/hotplace-04.jpg"
+      ]
+    },
+
+    "2": {
+      title: "Glazed Sea – AI 광고 제작",
+      category: "AI ADVERTISEMENT",
+      summary: "반짝이는 바다의 빛과 여름의 청량함을 담아, 헤어 액세서리의 매력을 감각적으로 표현한 AI 광고 영상입니다.",
+      concept: "바다의 빛과 물결에서 영감을 받은 헤어 액세서리 광고",
+      keywords: [
+        "#GlazedSea",
+        "#AI광고",
+        "#헤어액세서리",
+        "#바다의빛"
+      ],
+      production: "AI 기획 · 영상 생성 · 편집",
+      tool: "Flow AI · Premiere Pro",
+      poster: "assets/img/thumbnails/th_09(video).png",
+      videoFile: "assets/video/ai-ad.mp4",
+      stills: [
+        "assets/img/video-stills/ai-scene-01.jpg",
+        "assets/img/video-stills/ai-scene-02.jpg",
+        "assets/img/video-stills/ai-scene-03.jpg",
+        "assets/img/video-stills/ai-scene-04.jpg"
+      ]
+    },
+
+    "3": {
+      title: "동백커피 카페 홍보 영상",
+      category: "VIDEO PROJECT",
+      summary: "동백커피의 공간과 브랜드 분위기를 촬영하고, 감각적인 화면 구성과 모션 그래픽으로 담아낸 카페 홍보 영상입니다.",
+      concept: "카페의 공간과 분위기, 브랜드의 따뜻한 감성을 전달하는 홍보 영상",
+      keywords: [
+        "#동백커피",
+        "#카페홍보",
+        "#촬영",
+        "#모션그래픽"
+      ],
+      production: "기획 · 촬영 · 편집",
+      tool: "After Effects",
+      poster: "assets/img/thumbnails/th_10(video).png",
+      videoFile: "assets/video/dongbaek-cafe.mp4",
+      stills: [
+        "assets/img/video-stills/01_cafe-interior.png",
+        "assets/img/video-stills/02_gift-boxes.png",
+        "assets/img/video-stills/03_barista-coffee.png",
+        "assets/img/video-stills/04_enjoy-your-moment.png"
+      ]
+    },
+
+    /* 동래읍성역사축제 */
+    "4": {
+      title: "동래읍성역사축제",
+      category: "FESTIVAL VIDEO",
+
+      summary: "부산 동래의 역사와 문화를 생생하게 만날 수 있는 동래읍성역사축제를 소개하는 영상입니다. 화려한 축제 현장과 다양한 볼거리, 방문객들의 활기찬 모습을 리듬감 있게 구성하고, After Effects를 활용한 영상 연출로 축제만의 즐거운 에너지를 전달하고자 했습니다.",
+
+      concept: "역사와 문화가 어우러지는 동래 축제의 생동감 있는 순간",
+
+      keywords: [
+        "#동래읍성역사축제",
+        "#부산축제",
+        "#지역문화",
+        "#애프터이펙트"
+      ],
+
+      production: "기획 · 촬영 · 편집",
+      tool: "After Effects",
+
+      poster: "assets/img/thumbnails/th_11(video).png",
+      videoFile: "assets/video/dongnae-festival.mp4",
+
+      stills: [
+        "assets/img/video-stills/dongnae_01.png",
+        "assets/img/video-stills/dongnae_02.png",
+        "assets/img/video-stills/dongnae_03.png",
+        "assets/img/video-stills/dongnae_04.png"
+      ]
+    },
+
+    /* First Drive - AI 대리운전 광고 */
+    "5": {
+      title: "First Drive – AI 광고",
+      category: "AI ADVERTISEMENT",
+
+      summary: "AI 영상 생성 기술을 활용해 제작한 대리운저 광고 영상입니다. Flow AI를 통해 도심의 야경과 자동차의 주행 장면, 인물 중심의 시네마틱한 장면을 구현하고, Premiere Pro를 활용한 영상 편집으로 장면의 흐름과 분위기를 완성했습니다.",
+
+      concept: "AI로 구현한 반전의 광고 스토리",
+
+      keywords: [
+        "#FirstDrive",
+        "#AI광고",
+        "#대리운전 광고",
+        "#시네마틱"
+      ],
+
+      production: "AI 영상 기획 · 영상 생성 · 편집",
+      tool: "Flow AI · Premiere Pro",
+
+      poster: "assets/img/thumbnails/th_12(video).png",
+      videoFile: "assets/video/firstdrive.mp4",
+
+      stills: [
+        "assets/img/video-stills/firstdrive1.png",
+        "assets/img/video-stills/firstdrive2.png",
+        "assets/img/video-stills/firstdrive3.png",
+        "assets/img/video-stills/firstdrive4.png"
+      ]
+    },
+
+    "6": {
+      title: "영상 프로젝트 06",
+      category: "VIDEO PROJECT",
+      summary: "영상의 주제와 기획 의도를 소개하는 문장을 입력해 주세요.",
+      concept: "프로젝트 콘셉트 입력",
+      keywords: ["#키워드", "#키워드"],
+      production: "기획 · 촬영 · 편집",
+      tool: "Premiere Pro",
+      poster: "assets/img/thumbnails/th_13(video).png",
+      videoFile: "",
+      stills: [
+        "assets/img/thumbnails/th_13(video).png"
+      ]
+    }
+
+  };
+
+  /* URL의 video 번호로 프로젝트 선택 */
+  const id =
+    new URLSearchParams(window.location.search).get("video") || "1";
+
+  const project = videoProjects[id] || videoProjects["1"];
+
+  /* 제목과 상세 설명 */
+  document.title = project.title + " | PLAIN.";
+
+  document.getElementById("project-category").textContent =
+    project.category;
+
+  document.getElementById("project-title").textContent =
+    project.title;
+
+  document.getElementById("project-summary").textContent =
+    project.summary;
+
+  document.getElementById("project-concept").textContent =
+    project.concept;
+
+  document.getElementById("project-production").textContent =
+    project.production;
+
+  document.getElementById("project-tool").textContent =
+    project.tool;
+
+  /* 키워드 */
+  document.getElementById("project-keywords").innerHTML =
+    project.keywords
+      .map(word => "<em>" + word + "</em>")
+      .join("");
+
+  /* 영상 플레이어 */
+  const player = document.getElementById("project-video");
+  const placeholder = document.getElementById("video-placeholder");
+
+  player.poster = project.poster;
+
+  if (project.videoFile) {
+
+    player.style.display = "block";
+    player.src = project.videoFile;
+    player.load();
+
+    placeholder.style.display = "none";
+
+  } else {
+
+    player.style.display = "none";
+    placeholder.style.display = "flex";
+
+    placeholder.style.background =
+      "linear-gradient(135deg,#27231f,#51463c)";
+
+    placeholder.style.backgroundImage =
+      "linear-gradient(rgba(25,22,19,.55),rgba(25,22,19,.55)),url('" +
+      project.poster + "')";
+
+    placeholder.style.backgroundSize = "cover";
+    placeholder.style.backgroundPosition = "center";
+
+  }
+
+  /* 스틸 컷 이미지 */
+  const stillGrid = document.getElementById("project-stills");
+
+  if (id === "4" || id === "5") {
+    stillGrid.classList.add("stills-contain");
+  }
+
+  stillGrid.innerHTML = project.stills
+    .map((src, index) =>
+      '<img src="' + src +
+      '" alt="' + project.title +
+      ' 주요 장면 ' + (index + 1) +
+      '" loading="lazy">'
+    )
+    .join("");
+
+</script>
 
 </body>
-
 </html>
