@@ -1614,11 +1614,11 @@ section,
   --nav-font: "Poppins", "Noto Sans KR", sans-serif;
   --background-color: #fffdfb;
   --default-color: #45413f;
-  --heading-color: #292725;
+  --heading-color: #5C5552;
   --accent-color: #e7a19e;
   --surface-color: #ffffff;
   --nav-color: #45413f;
-  --nav-hover-color: #d98786;
+  --nav-hover-color: #9E4F40;
 }
 
 body { font-family: var(--default-font); }
@@ -1664,7 +1664,7 @@ body { font-family: var(--default-font); }
   content: ""; width: 110px; height: 1px; background: #c9bfba;
 }
 .plain-hero__copy h2 {
-  margin: 0; color: #292725; font-family: "Poppins", sans-serif;
+  margin: 0; color: #9E4F40; font-family: "Poppins", sans-serif;
   font-size: clamp(76px, 8.5vw, 126px); font-weight: 700;
   letter-spacing: -7px; line-height: .98;
 }
@@ -1694,7 +1694,7 @@ body { font-family: var(--default-font); }
   position: relative; display: block; width: 100%; min-width: 0;
   height: clamp(360px, 42vw, 510px); min-height: 0;
   border-radius: 7px; background-color: #f7efeb;
-  background-image: url("../img/plain-hero-visual.webp");
+  background-image: url("../img/./plain-main.jpg");
   background-size: cover; background-position: center center;
   box-shadow: 0 16px 42px rgba(76, 58, 48, .07);
   transition: transform .35s ease, box-shadow .35s ease;
@@ -1816,3 +1816,5 @@ body { font-family: var(--default-font); }
   background: transparent !important;
   transform: translate(-50%, -50%) scale(1.06) !important;
 }
+#portfolio .section-title h2 { color: var(--heading-color) !important; }
+
