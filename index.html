@@ -1,423 +1,316 @@
 
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
   <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>PLAIN. | Design Portfolio</title>
-  <meta name="description" content="">
-  <meta name="keywords" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>서진아 포트폴리오 | PLAIN.</title>
+  <meta name="description" content="그래픽 디자인, 앱 UI, 영상·AI 광고까지 — 디자이너 서진아의 포트폴리오 PLAIN.">
+  <meta property="og:title" content="서진아 포트폴리오 | PLAIN.">
+  <meta property="og:description" content="그래픽 디자인 · 앱 UI · 영상 편집 및 AI 영상 제작 포트폴리오">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://wwiiss265-web.github.io/jinah/assets/img/opt/thumb/wardrobe.webp">
 
-  <!-- Favicons -->
-  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg?v=3">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com" rel="preconnect">
-  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- 웹폰트 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap">
+  <link rel="stylesheet" href="assets/css/plain.css">
 
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <style>
+    /* 작은 화면에서도 메뉴 세 개 표시 */
+    @media (max-width: 680px) {
+      .nav { gap: 2px; }
+      .nav a:not(.cta) { display: inline-flex; }
+      .nav a { font-size: 12px; padding: 8px 9px; }
+      .nav a.cta { margin-left: 0; }
+      .hd .logo span { font-size: 20px; }
+    }
 
-  <!-- Main CSS File -->
-  <link href="assets/css/main.css" rel="stylesheet">
+    /* HERO: 작업 보기 아래 작업 분야 */
+    .hero-fields {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+      margin-top: 38px;
+      padding-top: 24px;
+      border-top: 1px solid #ded7ce;
+    }
 
-  <!-- =======================================================
-  * Template Name: Lonely
-  * Template URL: https://bootstrapmade.com/free-html-bootstrap-template-lonely/
-  * Updated: Aug 07 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+    .hero-field {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+      min-width: 0;
+    }
+
+    .hero-field strong {
+      font-family: "Pretendard Variable", Pretendard, sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      line-height: 1.3;
+      color: var(--text);
+    }
+
+    .hero-field span {
+      font-family: "Pretendard Variable", Pretendard, sans-serif;
+      font-size: 13px;
+      font-weight: 400;
+      line-height: 1.5;
+      color: var(--sub);
+    }
+
+    /* 소개 문구 */
+    .hero .lead {
+      letter-spacing: -0.3px;
+      word-break: keep-all;
+    }
+
+    .hero .lead-detail {
+      display: block;
+      margin-top: 10px;
+    }
+
+    @media (max-width: 680px) {
+      .hero-fields {
+        gap: 10px;
+        margin-top: 30px;
+        padding-top: 20px;
+      }
+
+      .hero-field strong {
+        font-size: 16px;
+      }
+
+      .hero-field span {
+        font-size: 11px;
+        word-break: keep-all;
+      }
+
+      .hero .lead-detail {
+        margin-top: 8px;
+      }
+    }
+  </style>
 </head>
+<body>
 
-<body class="index-page">
+<header class="hd" id="top">
+  <div class="wrap">
+    <a href="index.html" class="logo" aria-label="PLAIN. 홈">
+      <img src="assets/img/favicon.svg" alt="">
+      <span>PLAIN<b>.</b></span>
+    </a>
+    <nav class="nav" aria-label="주요 메뉴">
+      <a href="#top">Home</a>
+      <a href="#about">About</a>
+      <a href="#works" class="cta">Portfolio</a>
+    </nav>
+  </div>
+</header>
 
-  <header id="header" class="header d-flex align-items-center sticky-top">
-    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+<main>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="rv">
+        <span class="eyebrow">PORTFOLIO</span>
 
-      <a href="index.html" class="logo d-flex align-items-center" aria-label="PLAIN 홈으로 이동">
-        <img src="assets/img/favicon.svg" class="plain-logo-mark" alt="" aria-hidden="true">
-        <h1 class="sitename">PLAIN<span>.</span></h1>
-      </a>
+        <h1>덜어낼수록<br>선명해지는 <em>design.</em></h1>
 
-      <nav id="navmenu" class="navmenu">
-        <ul>
-          <li><a href="#hero" class="active">Home</a></li>
-          <li><a href="#portfolio">Portfolio</a></li>
-          <li><a href="#about">About</a></li>
-        </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-      </nav>
+        <p class="lead">
+          안녕하세요, <strong>디자이너 서진아</strong>입니다.
+          <span class="lead-detail">
+            그래픽 디자인부터 App UI, 영상 편집과 AI 영상 제작까지.<br class="pc">
+            불필요한 요소를 덜어내고, 메시지를 선명하게 전달하고자 합니다.
+          </span>
+        </p>
 
-    </div>
-  </header>
+        <div class="btns">
+          <a href="#works" class="btn btn-dark">
+            작업 보기
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M7 17 17 7M8 7h9v9"/>
+            </svg>
+          </a>
+        </div>
 
-  <main class="main">
+        <!-- 작업 분야 -->
+        <div class="hero-fields" aria-label="작업 분야">
+          <div class="hero-field">
+            <strong>Graphic</strong>
+            <span>그래픽 디자인</span>
+          </div>
 
-    <!-- Hero Section -->
-    <section id="hero" class="hero section plain-hero">
-      <div class="container plain-hero__inner" data-aos="fade-up" data-aos-delay="100">
-        <div class="plain-hero__copy">
-          <p class="plain-hero__eyebrow">PORTFOLIO WEBSITE</p>
-          <h2>PLAIN<span>.</span></h2>
-          <p class="plain-hero__subtitle">Design Portfolio</p>
-          <p class="plain-hero__description">복잡함을 덜어내고, 디자인의 본질에 집중한<br class="d-none d-md-block"> 서진아의 포트폴리오입니다.</p>
-          <div class="plain-hero__actions">
-            <a href="#portfolio" class="plain-button plain-button--dark">View Work <i class="bi bi-arrow-up-right"></i></a>
-            <a href="#about" class="plain-button plain-button--outline">About Me</a>
+          <div class="hero-field">
+            <strong>App UI</strong>
+            <span>앱 화면 디자인</span>
+          </div>
+
+          <div class="hero-field">
+            <strong>Video &amp; AI</strong>
+            <span>영상 편집 · AI 영상 제작</span>
           </div>
         </div>
-        <a href="#portfolio" class="plain-hero__visual" aria-label="포트폴리오 작업 보기"></a>
       </div>
-    </section><!-- /Hero Section -->
 
-    <!-- About Section -->
-    <section id="about" class="about section">
+      <div class="collage rv" aria-label="대표 작업">
+        <a class="c1" href="work.html?id=wardrobe">
+          <img src="assets/img/opt/thumb/wardrobe.webp" alt="스마트 옷장 앱 UI 디자인">
+          <span>App UI</span>
+        </a>
+        <a class="c2" href="work.html?id=glazedsea">
+          <img src="assets/img/opt/thumb/glazedsea.webp" alt="Glazed Sea AI 광고">
+          <span>AI VIDEO</span>
+        </a>
+        <a class="c3" href="work.html?id=character">
+          <img src="assets/img/opt/thumb/character.webp" alt="호야 캐릭터 디자인">
+          <span>CHARACTER</span>
+        </a>
+      </div>
+    </div>
+  </section>
 
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>About</h2>
-        <p>Selected works · 다양한 시선으로 완성한 디자인 프로젝트</p>
-      </div><!-- End Section Title -->
+  <!-- 흐르는 영어 문구 -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>Poster</span>
+      <span>Branding</span>
+      <span>Character</span>
+      <span>Book Cover</span>
+      <span>Card News</span>
+      <span>Banner</span>
+      <span>App UI</span>
+      <span>Video Editing</span>
+      <span>Motion Graphics</span>
+      <span>AI Advertisement</span>
 
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
+      <span>Poster</span>
+      <span>Branding</span>
+      <span>Character</span>
+      <span>Book Cover</span>
+      <span>Card News</span>
+      <span>Banner</span>
+      <span>App UI</span>
+      <span>Video Editing</span>
+      <span>Motion Graphics</span>
+      <span>AI Advertisement</span>
+    </div>
+  </div>
 
-        <div class="row gy-4 justify-content-center">
-          <div class="col-lg-12 content">
-            <h2>UI/UX Designer &amp; Web Developer.</h2>
-            <p class="fst-italic py-3">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-              magna aliqua.
-            </p>
-            <div class="row">
-              <div class="col-lg-6">
-                <ul>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Birthday:</strong> <span>1 May 1995</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Website:</strong> <span>www.example.com</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>+123 456 7890</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>New York, USA</span></li>
-                </ul>
-              </div>
-              <div class="col-lg-6">
-                <ul>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span>30</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>Master</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>email@example.com</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Freelance:</strong> <span>Available</span></li>
-                </ul>
-              </div>
+  <!-- ABOUT -->
+  <section class="sec about" id="about">
+    <div class="wrap about-grid">
+      <div class="about-intro rv">
+        <span class="eyebrow">About</span>
+
+        <div class="sec-head" style="margin-bottom:28px">
+          <h2>PLAIN<em>.</em></h2>
+        </div>
+
+        <p>한눈에 이해할 수 있는 디자인을 지향합니다.</p>
+
+        <p>
+          그래픽 디자인부터 Figma 앱 화면 디자인,
+          영상 촬영·편집, AI 영상 제작까지 다양한 작업을 담았습니다.
+        </p>
+        <p>
+          작업의 목적과 전달할 내용을 생각하며,
+          불필요한 요소를 줄이고 명확하게 표현하는 데 집중합니다.
+        </p>
+      </div>
+
+      <div class="rv">
+        <div class="caps">
+          <div class="cap">
+            <span class="no">01</span>
+            <div>
+              <h3>Graphic &amp; Branding</h3>
+              <p>포스터, 브랜드 아이덴티티, 캐릭터, 북커버, 카드뉴스, 관광 홍보 배너 시리즈</p>
             </div>
-            <p class="py-3">
-              Officiis eligendi itaque labore et dolorum mollitia officiis optio vero. Quisquam sunt adipisci omnis ut. Nulla accusantium dolor incidunt officia tempore. Et eius omnis.
-              Cupiditate ut dicta maxime officiis quidem quia. Sed et consectetur qui quia repellendus itaque neque.
-            </p>
+          </div>
+
+          <div class="cap">
+            <span class="no">02</span>
+            <div>
+              <h3>App UI Design</h3>
+              <p>Figma를 활용한 앱 화면 디자인, 정보구조도, 와이어프레임, 스타일가이드 및 프로토타입 제작</p>
+            </div>
+          </div>
+
+          <div class="cap">
+            <span class="no">03</span>
+            <div>
+              <h3>Video &amp; AI Ads</h3>
+              <p>직접 촬영·편집한 영상, After Effects 모션그래픽, Google Flow를 활용한 AI 광고 영상 제작</p>
+            </div>
           </div>
         </div>
 
-      </div>
-
-    </section><!-- /About Section -->
-
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="portfolio section light-background">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Portfolio</h2>
-        <p>Selected works · 다양한 시선으로 완성한 디자인 프로젝트</p>
-      </div><!-- End Section Title -->
-
-      <div class="container">
-
-        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
-
-          <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
-            <li data-filter="*" class="filter-active">All</li>
-            <li data-filter=".filter-design">Design</li>
-            <li data-filter=".filter-video">Video</li>
-            <li data-filter=".filter-figma">Figma</li>
-            <li data-filter=".filter-teamproject">TeamProject</li>
-          </ul><!-- End Portfolio Filters -->
-
-          <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-design">
-              <a href="assets/img/details/d_01.png" data-gallery="portfolio-gallery-design" class="portfolio-card portfolio-card--poster glightbox" aria-label="POSTER DESIGN: 엔진OFF 지구ON" title="POSTER DESIGN · 엔진OFF 지구ON">
-                <div class="portfolio-card__image">
-                  <img src="assets/img/thumbnails/th_01(design).png" class="img-fluid" alt="엔진OFF 지구ON">
-                </div>
-                <div class="portfolio-card__caption">
-                  <div class="portfolio-card__text">
-                    <span class="portfolio-card__category">POSTER DESIGN</span>
-                    <h3>엔진OFF 지구ON</h3>
-                  </div>
-                  <span class="portfolio-card__arrow" aria-hidden="true"><i class="bi bi-arrow-up-right"></i></span>
-                </div>
-              </a>
-            </div><!-- End 엔진OFF 지구ON Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-design">
-              <a href="assets/img/details/d_06.png" data-gallery="portfolio-gallery-design" class="portfolio-card portfolio-card--brand glightbox" aria-label="BRAND DESIGN: 포롱포롱 유아책 브랜딩" title="BRAND DESIGN · 포롱포롱 유아책 브랜딩">
-                <div class="portfolio-card__image">
-                  <img src="assets/img/thumbnails/th_06(design).png" class="img-fluid" alt="포롱포롱 유아책 브랜딩">
-                </div>
-                <div class="portfolio-card__caption">
-                  <div class="portfolio-card__text">
-                    <span class="portfolio-card__category">BRAND DESIGN</span>
-                    <h3>포롱포롱 유아책 브랜딩</h3>
-                  </div>
-                  <span class="portfolio-card__arrow" aria-hidden="true"><i class="bi bi-arrow-up-right"></i></span>
-                </div>
-              </a>
-            </div><!-- End 포롱포롱 유아책 브랜딩 Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-design">
-              <a href="assets/img/details/d_05.png" data-gallery="portfolio-gallery-design" class="portfolio-card portfolio-card--character glightbox" aria-label="CHARACTER DESIGN: 호야 캐릭터 디자인" title="CHARACTER DESIGN · 호야 캐릭터 디자인">
-                <div class="portfolio-card__image">
-                  <img src="assets/img/thumbnails/th_05(design).png" class="img-fluid" alt="호야 캐릭터 디자인">
-                </div>
-                <div class="portfolio-card__caption">
-                  <div class="portfolio-card__text">
-                    <span class="portfolio-card__category">CHARACTER DESIGN</span>
-                    <h3>호야 캐릭터 디자인</h3>
-                  </div>
-                  <span class="portfolio-card__arrow" aria-hidden="true"><i class="bi bi-arrow-up-right"></i></span>
-                </div>
-              </a>
-            </div><!-- End 호야 캐릭터 디자인 Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-design">
-              <a href="assets/img/details/d_04.png" data-gallery="portfolio-gallery-design" class="portfolio-card portfolio-card--book glightbox" aria-label="BOOK COVER DESIGN: 초정리 편지" title="BOOK COVER DESIGN · 초정리 편지">
-                <div class="portfolio-card__image">
-                  <img src="assets/img/thumbnails/th_04(design).png" class="img-fluid" alt="초정리 편지">
-                </div>
-                <div class="portfolio-card__caption">
-                  <div class="portfolio-card__text">
-                    <span class="portfolio-card__category">BOOK COVER DESIGN</span>
-                    <h3>초정리 편지</h3>
-                  </div>
-                  <span class="portfolio-card__arrow" aria-hidden="true"><i class="bi bi-arrow-up-right"></i></span>
-                </div>
-              </a>
-            </div><!-- End 초정리 편지 Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-design">
-              <a href="assets/img/details/d_02.png" data-gallery="portfolio-gallery-design" class="portfolio-card portfolio-card--cardnews glightbox" aria-label="CARD NEWS DESIGN: 동백커피 카드뉴스" title="CARD NEWS DESIGN · 동백커피 카드뉴스">
-                <div class="portfolio-card__image">
-                  <img src="assets/img/thumbnails/th_02(design).png" class="img-fluid" alt="동백커피 카드뉴스">
-                </div>
-                <div class="portfolio-card__caption">
-                  <div class="portfolio-card__text">
-                    <span class="portfolio-card__category">CARD NEWS DESIGN</span>
-                    <h3>동백커피 카드뉴스</h3>
-                  </div>
-                  <span class="portfolio-card__arrow" aria-hidden="true"><i class="bi bi-arrow-up-right"></i></span>
-                </div>
-              </a>
-            </div><!-- End 동백커피 카드뉴스 Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-design">
-              <a href="assets/img/details/d_03.png" data-gallery="portfolio-gallery-design" class="portfolio-card portfolio-card--banner glightbox" aria-label="BANNER DESIGN: 해운대 블루라인파크 관광 배너" title="BANNER DESIGN · 해운대 블루라인파크 관광 배너">
-                <div class="portfolio-card__image">
-                  <img src="assets/img/thumbnails/th_03(design).png" class="img-fluid" alt="해운대 블루라인파크 관광 배너">
-                </div>
-                <div class="portfolio-card__caption">
-                  <div class="portfolio-card__text">
-                    <span class="portfolio-card__category">BANNER DESIGN</span>
-                    <h3>해운대 블루라인파크 관광 배너</h3>
-                  </div>
-                  <span class="portfolio-card__arrow" aria-hidden="true"><i class="bi bi-arrow-up-right"></i></span>
-                </div>
-              </a>
-            </div><!-- End 해운대 블루라인파크 관광 배너 Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-figma">
-              <a href="figma-details.html" class="portfolio-card" aria-label="UI/UX DESIGN: 스마트 옷장 앱 오늘 뭐 입지?">
-                <div class="portfolio-card__image">
-                  <img src="assets/img/thumbnails/th_07(figma).png" class="img-fluid" alt="스마트 옷장 앱 UI/UX 디자인">
-                </div>
-                <div class="portfolio-card__caption">
-                  <div class="portfolio-card__text">
-                    <span class="portfolio-card__category">UI/UX DESIGN</span>
-                    <h3>스마트 옷장 앱 · 오늘 뭐 입지?</h3>
-                  </div>
-                  <span class="portfolio-card__arrow" aria-hidden="true"><i class="bi bi-arrow-up-right"></i></span>
-                </div>
-              </a>
-            </div><!-- End 스마트 옷장 앱 Figma Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-video">
-              <a href="video-details.html?video=1" class="portfolio-card portfolio-card--video" aria-label="나만의 핫플레이스 영상 상세페이지 보기">
-                <div class="portfolio-card__image">
-                  <img src="assets/img/thumbnails/th_08(video).png" class="img-fluid" alt="나만의 핫플레이스 썸네일">
-                  <span class="portfolio-video-play" aria-hidden="true"><img src="assets/img/video.svg" alt=""></span>
-                </div>
-                <div class="portfolio-card__caption">
-                  <div class="portfolio-card__text">
-                    <span class="portfolio-card__category">TRAVEL VIDEO</span>
-                    <h3>나만의 핫플레이스</h3>
-                  </div>
-                  <span class="portfolio-card__arrow" aria-hidden="true"><i class="bi bi-arrow-up-right"></i></span>
-                </div>
-              </a>
-            </div><!-- End 나만의 핫플레이스 Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-video">
-              <a href="video-details.html?video=2" class="portfolio-card portfolio-card--video" aria-label="Glazed Sea AI 광고 영상 상세페이지 보기">
-                <div class="portfolio-card__image">
-                  <img src="assets/img/thumbnails/th_09(video).png" class="img-fluid" alt="Glazed Sea AI 광고 썸네일">
-                  <span class="portfolio-video-play" aria-hidden="true"><img src="assets/img/video.svg" alt=""></span>
-                </div>
-                <div class="portfolio-card__caption">
-                  <div class="portfolio-card__text">
-                    <span class="portfolio-card__category">AI ADVERTISEMENT</span>
-                    <h3>Glazed Sea</h3>
-                  </div>
-                  <span class="portfolio-card__arrow" aria-hidden="true"><i class="bi bi-arrow-up-right"></i></span>
-                </div>
-              </a>
-            </div><!-- End Glazed Sea AI Advertisement Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-video">
-              <a href="video-details.html?video=3" class="portfolio-card portfolio-card--video" aria-label="동백커피 카페 홍보 영상 상세페이지 보기">
-                <div class="portfolio-card__image">
-                  <img src="assets/img/thumbnails/th_10(video).png" class="img-fluid" alt="동백커피 카페 홍보 영상 썸네일">
-                  <span class="portfolio-video-play" aria-hidden="true"><img src="assets/img/video.svg" alt=""></span>
-                </div>
-                <div class="portfolio-card__caption">
-                  <div class="portfolio-card__text">
-                    <span class="portfolio-card__category">VIDEO PROJECT</span>
-                    <h3>동백커피 카페 홍보 영상</h3>
-                  </div>
-                  <span class="portfolio-card__arrow" aria-hidden="true"><i class="bi bi-arrow-up-right"></i></span>
-                </div>
-              </a>
-            </div><!-- End 동백커피 카페 홍보 영상 Portfolio Item -->
-
-            <!-- 동래읍성역사축제 -->
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-video">
-              <a href="video-details.html?video=4" class="portfolio-card portfolio-card--video" aria-label="동래읍성역사축제 영상 상세페이지 보기">
-                <div class="portfolio-card__image">
-                  <img src="assets/img/thumbnails/th_11(video).png" class="img-fluid" alt="동래읍성역사축제 썸네일">
-                  <span class="portfolio-video-play" aria-hidden="true"><img src="assets/img/video.svg" alt=""></span>
-                </div>
-                <div class="portfolio-card__caption">
-                  <div class="portfolio-card__text">
-                    <span class="portfolio-card__category">FESTIVAL VIDEO</span>
-                    <h3>동래읍성역사축제</h3>
-                  </div>
-                  <span class="portfolio-card__arrow" aria-hidden="true"><i class="bi bi-arrow-up-right"></i></span>
-                </div>
-              </a>
-            </div><!-- End 동래읍성역사축제 Portfolio Item -->
-
-            <!-- First Drive -->
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-video">
-              <a href="video-details.html?video=5" class="portfolio-card portfolio-card--video" aria-label="First Drive AI 대리운전 광고 영상 상세페이지 보기">
-                <div class="portfolio-card__image">
-                  <img src="assets/img/thumbnails/th_12(video).png" class="img-fluid" alt="First Drive 썸네일">
-                  <span class="portfolio-video-play" aria-hidden="true"><img src="assets/img/video.svg" alt=""></span>
-                </div>
-                <div class="portfolio-card__caption">
-                  <div class="portfolio-card__text">
-                    <span class="portfolio-card__category">AI ADVERTISEMENT</span>
-                    <h3>First Drive</h3>
-                  </div>
-                  <span class="portfolio-card__arrow" aria-hidden="true"><i class="bi bi-arrow-up-right"></i></span>
-                </div>
-              </a>
-            </div><!-- End First Drive Portfolio Item -->
-
-            <!-- <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-video">
-              <a href="video-details.html?video=6" class="portfolio-card portfolio-card--video" aria-label="영상 프로젝트 06 영상 상세페이지 보기">
-                <div class="portfolio-card__image">
-                  <img src="assets/img/thumbnails/th_13(video).png" class="img-fluid" alt="영상 프로젝트 06 썸네일">
-                  <span class="portfolio-video-play" aria-hidden="true"><img src="assets/img/video.svg" alt=""></span>
-                </div>
-                <div class="portfolio-card__caption">
-                  <div class="portfolio-card__text">
-                    <span class="portfolio-card__category">VIDEO PROJECT</span>
-                    <h3>영상 프로젝트 06</h3>
-                  </div>
-                  <span class="portfolio-card__arrow" aria-hidden="true"><i class="bi bi-arrow-up-right"></i></span>
-                </div>
-              </a>
-            </div>End 영상 프로젝트 06 Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-teamproject">
-              <div class="portfolio-thumbnail">
-                <img src="assets/img/thumbnails/./th_13(Team).png" class="img-fluid" alt="TeamProject sample">
-              </div>
-              <div class="portfolio-info">
-                <h4>TeamProject 1</h4>
-                <p>Team project sample</p>
-                <a href="assets/img/details/./d_14.png" data-gallery="portfolio-gallery-teamproject" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-          </div><!-- End Portfolio Container -->
-
-        </div>
-
-      </div>
-
-    </section><!-- /Portfolio Section -->
-
-  </main>
-
-  <footer id="footer" class="footer light-background">
-    <div class="container">
-      <h3 class="sitename">PLAIN.</h3>
-      <p>Et aut eum quis fuga eos sunt ipsa nihil. Labore corporis magni eligendi fuga maxime saepe commodi placeat.</p>
-      <div class="social-links d-flex justify-content-center">
-        <a href=""><i class="bi bi-twitter-x"></i></a>
-        <a href=""><i class="bi bi-facebook"></i></a>
-        <a href=""><i class="bi bi-instagram"></i></a>
-        <a href=""><i class="bi bi-skype"></i></a>
-        <a href=""><i class="bi bi-linkedin"></i></a>
-      </div>
-      <div class="container">
-        <div class="copyright">
-          <span>Copyright</span> <strong class="px-1 sitename">PLAIN.</strong> <span>All Rights Reserved</span>
-        </div>
-        <div class="credits">
-          <!-- All the links in the footer should remain intact. -->
-          <!-- You can delete the links only if you've purchased the pro version. -->
-          <!-- Licensing information: https://bootstrapmade.com/license/ -->
-          <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-          Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> | <a href="https://bootstrapmade.com/tools/">DevTools</a>
+        <div class="tools">
+          <h3>TOOLS</h3>
+          <div class="chips">
+            <div class="chip-row">
+              <span class="chip">Photoshop</span>
+              <span class="chip">Illustrator</span>
+              <span class="chip">Figma</span>
+              <span class="chip">Premiere Pro</span>
+            </div>
+            <div class="chip-row">
+              <span class="chip">After Effects</span>
+              <span class="chip">Google Flow</span>
+              <span class="chip">미리캔버스</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </footer>
+  </section>
 
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <!-- WORKS -->
+  <section class="sec" id="works">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div>
+          <span class="eyebrow">PORTFOLIO</span>
+          <h2>Works <em>&amp;</em> Projects</h2>
+        </div>
+        <div class="filters" role="group" aria-label="카테고리 필터" id="filters"></div>
+      </div>
 
-  <!-- Preloader -->
-  <div id="preloader"></div>
+      <div class="grid" id="grid"></div>
+    </div>
+  </section>
 
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <!-- CONTACT -->
+  <section class="sec contact" id="contact">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div>
+          <span class="eyebrow">Contact</span>
+          <h2>함께 만들<br><em>다음 이야기.</em></h2>
+        </div>
+        <p>작업에 대한 문의나 협업 제안은 언제든 환영합니다.</p>
+      </div>
 
-  <!-- Main JS File -->
-  <script src="assets/js/main.js"></script>
+      <div class="contact-box rv" id="contact-box"></div>
+    </div>
+  </section>
+</main>
 
+<footer class="ft">
+  <div class="wrap">
+    <span>© 2026 <span data-profile="nameEn"></span> · PLAIN. All rights reserved.</span>
+    <a href="#top">Back to top ↑</a>
+  </div>
+</footer>
+
+<script src="assets/js/data.js"></script>
+<script src="assets/js/plain.js"></script>
 </body>
-
 </html>
