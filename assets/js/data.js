@@ -37,7 +37,7 @@ window.PROJECTS = [
     tools: ["HTML", "CSS", "JavaScript"],
     keywords: ["#반응형웹", "#브랜드사이트", "#메뉴필터", "#캐릭터"],
     thumb: "assets/img/opt/thumb/dongbaek-web.webp",
-    site: "team/dongbaek/index.html"
+    site: "https://dongbaek.dothome.co.kr/"
   },
   {
     id: "wardrobe",
@@ -51,7 +51,9 @@ window.PROJECTS = [
     tools: ["Figma"],
     keywords: ["#날씨코디", "#디지털옷장", "#코디추천", "#앱디자인"],
     thumb: "assets/img/opt/thumb/wardrobe.webp",
-    detail: "assets/img/opt/detail/wardrobe.webp"
+    detail: "assets/img/details/d_07.png",
+    previewVideo: "assets/video/app-preview.mp4",
+    prototype: "https://www.figma.com/proto/8ODNqLLR3QjRqfuoiij9dS/%EC%95%B1-%EB%94%94%EC%9E%90%EC%9D%B8-%EC%84%9C%EC%A7%84%EC%95%84?node-id=211-2189&t=VedqaZB1IgKG8TM0-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=44%3A471&show-proto-sidebar=1&fuid=1660832775505314825"
   },
   {
     id: "glazedsea",

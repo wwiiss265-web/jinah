@@ -23,7 +23,9 @@
   var grid = $("#grid"), filters = $("#filters");
   function card(p, big) {
     var badge = p.video ? '<span class="badge">' + ICON_PLAY + 'VIDEO</span>' : p.site ? '<span class="badge">' + ICON_WEB + 'LIVE SITE</span>' : "";
-    return '<a class="card' + (big ? " big" : "") + '" href="work.html?id=' + p.id + '">' +
+    var externalSite = p.id === "dongbaek-web" && p.site;
+    var href = externalSite ? p.site : "work.html?id=" + encodeURIComponent(p.id);
+    return '<a class="card' + (big ? " big" : "") + '" href="' + esc(href) + '"' + (externalSite ? ' target="_blank" rel="noopener noreferrer"' : '') + '>' +
       '<div class="thumb"><img src="' + p.thumb + '" alt="' + esc(p.title) + '" loading="lazy" decoding="async">' + badge +
       '<span class="go" aria-hidden="true">' + ICON_ARROW + "</span></div>" +
       '<div class="meta"><h3>' + esc(p.title) + '</h3><span class="cat">' + esc(p.label) + "</span></div>" +
@@ -85,7 +87,10 @@
     } else if (p.site) {
       media = '<a class="dt-media dt-site" href="' + p.site + '" target="_blank" rel="noopener"><img src="' + p.thumb + '" alt="' + esc(p.title) + '"><span class="btn btn-dark open">사이트 열기 ' + ICON_ARROW + "</span></a>";
     } else if (p.detail) {
-      media = '<div class="dt-long"><img src="' + p.detail + '" alt="' + esc(p.title) + ' 상세 디자인"></div>';
+      media = '<div class="dt-long' + (p.previewVideo || p.prototype ? ' dt-interactive' : '') + '"><img src="' + p.detail + '" alt="' + esc(p.title) + ' 상세 디자인">' +
+        (p.previewVideo ? '<button type="button" class="dt-image-link dt-preview-link" aria-label="앱 영상 미리보기 재생" data-preview-video="' + esc(p.previewVideo) + '"></button>' : '') +
+        (p.prototype ? '<a class="dt-image-link dt-prototype-link" href="' + esc(p.prototype) + '" target="_blank" rel="noopener noreferrer" aria-label="Figma 앱 프로토타입 체험하기 (새 창)"></a>' : '') +
+        '</div>';
     }
 
     dt.innerHTML =
@@ -96,6 +101,30 @@
       '<div class="wrap">' + media +
       '<nav class="pager" aria-label="다른 작업"><a href="work.html?id=' + prev.id + '"><small>← PREV</small><strong>' + esc(prev.title) + '</strong></a>' +
       '<a class="next" href="work.html?id=' + next.id + '"><small>NEXT →</small><strong>' + esc(next.title) + "</strong></a></nav></div>";
+    // The buttons are placed over the two printed buttons in d_07.png.
+    var previewButton = dt.querySelector("[data-preview-video]");
+    if (previewButton) previewButton.addEventListener("click", function () {
+      var overlay = document.createElement("div");
+      overlay.className = "dt-video-overlay";
+      overlay.setAttribute("role", "dialog");
+      overlay.setAttribute("aria-modal", "true");
+      overlay.setAttribute("aria-label", "앱 영상 미리보기");
+      overlay.innerHTML = '<div class="dt-video-dialog"><button type="button" class="dt-video-close" aria-label="영상 닫기">×</button><video controls autoplay playsinline preload="metadata" src="' + esc(previewButton.dataset.previewVideo) + '"></video></div>';
+      document.body.appendChild(overlay);
+      var close = overlay.querySelector(".dt-video-close"), video = overlay.querySelector("video");
+      var previousOverflow = document.body.style.overflow;
+      document.body.style.overflow = "hidden";
+      function dismiss() {
+        video.pause(); overlay.remove(); document.body.style.overflow = previousOverflow;
+        document.removeEventListener("keydown", onKey); previewButton.focus();
+      }
+      function onKey(e) { if (e.key === "Escape") dismiss(); }
+      close.addEventListener("click", dismiss);
+      overlay.addEventListener("click", function (e) { if (e.target === overlay) dismiss(); });
+      document.addEventListener("keydown", onKey);
+      close.focus();
+      video.play().catch(function () {});
+    });
     scrollTo(0, 0);
   }
 
