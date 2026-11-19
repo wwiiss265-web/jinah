@@ -22,22 +22,6 @@ window.CATEGORIES = [
   { key: "appui",  label: "App UI" },
   { key: "video",  label: "Video · AI" },
   { key: "team",   label: "Team Project" }
-  ,{
-    id: "canon3d",
-    cat: "video",
-    detailCategory: "3D 오브젝트 광고 영상",
-    label: "MOTION GRAPHICS",
-    title: "Canon EOS M200 3D 광고 영상",
-    summary: "After Effects를 활용해 제작한 3D 오브젝트 광고 영상입니다. 카메라 제품의 형태와 디테일을 강조하며, 짧고 임팩트 있게 브랜드 무드를 전달하도록 구성했습니다.",
-    concept: "다운로드한 3D 카메라 오브젝트를 활용해 제품의 각도와 디테일을 감각적으로 보여주는 모션 광고",
-    role: "기획 · 편집 · 모션그래픽",
-    tools: ["After Effects"],
-    keywords: ["#3D오브젝트", "#카메라광고", "#AfterEffects", "#모션그래픽"],
-    thumb: "assets/img/opt/thumb/canon3d.webp",
-    video: "assets/video/canon-eos-m200-3d.mp4",
-    stills: ["canon3d-01", "canon3d-02", "canon3d-03", "canon3d-04"]
-  }
-
 ];
 
 window.PROJECTS = [
